@@ -11,6 +11,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { RestapiService } from './services/restapi.service';
 import { LoggerService } from './services/logger.service';
 import { appRoutingProviders, routing } from './app.routing';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { appRoutingProviders, routing } from './app.routing';
     HomeComponent,
     LoginComponent,
     ErrorComponent,
-    LogoutComponent
+    LogoutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
