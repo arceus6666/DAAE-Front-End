@@ -1,4 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<link rel="stylesheet" href="../assets/css/materialize.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/materialize.min.js"></script>
+
+<nav class="black lighten-1" role="navigation">
+  <div class="nav-wrapper container"><a id="logo-container" [routerLink]="['']" class="brand-logo"><img src="../assets/res/logo.png" height="64" width="200"></a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
