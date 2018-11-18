@@ -9,7 +9,7 @@
     <nav role="navigation">
       <ul>
         <li>
-          <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
+          <a *ngIf="!_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
         </li>
         <li>
           <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']" [routerLinkActive]="['red']">Login</a>
@@ -19,11 +19,8 @@
         </li>
       </ul>
     </nav>
+
     <router-outlet></router-outlet>
   </div>
   <div class="column side" style="background-color:#ccc;">Column</div>
-</div>
-
-<div class="footer">
-  Ingeniería de Sistemas Comptacionales - Práctica Interna <br />Segundo semestre 2018
 </div>

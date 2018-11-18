@@ -12,6 +12,7 @@ import { RestapiService } from './services/restapi.service';
 import { LoggerService } from './services/logger.service';
 import { appRoutingProviders, routing } from './app.routing';
 import { ProfileComponent } from './profile/profile.component';
+import { SearchFormComponent } from './search-form/search-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     ErrorComponent,
     LogoutComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
