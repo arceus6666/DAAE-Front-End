@@ -24,11 +24,13 @@ body {
 /* Left and right column */
 .column.side {
   width: 25%;
+  height: 100%;
 }
 
 /* Middle column */
 .column.middle {
   width: 75%;
+  height: 100%;
 }
 
 /* Clear floats after the columns */
