@@ -1,23 +1,36 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<link rel="stylesheet" href="../assets/css/materialize.min.css">
-<link rel="stylesheet" href="../assets/css/style.css">
-<script src="../assets/js/materialize.min.js"></script>
+<div class="row">
+  <div class="column middle" style="background-color:#bbb;">
+    <div class="header">
+      <div class="floatleft">
+        <a id="logo-container" [routerLink]="['']" class="brand-logo"><img src="../assets/res/logo.png" height="64"
+            width="200"></a>
+      </div>
+    </div>
 
-<nav class="black lighten-1" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" [routerLink]="['']" class="brand-logo"><img src="../assets/res/logo.png"
-        height="64" width="200"></a>
-    <ul class="right hide-on-med-and-down">
-      <li>
-        <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
-      </li>
-      <li>
-        <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']" [routerLinkActive]="['red']">Login</a>
-      </li>
-      <li>
-        <a *ngIf="_logger.isLoged()" [routerLink]="['/logout']">Logout</a>
-      </li>
-    </ul>
+    <nav role="navigation">
+      <ul>
+        <li>
+          <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
+        </li>
+        <li>
+          <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']" [routerLinkActive]="['red']">Login</a>
+        </li>
+        <li>
+          <a *ngIf="_logger.isLoged()" [routerLink]="['/logout']">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+
   </div>
-</nav>
-<router-outlet></router-outlet>
+
+
+  <div class="column side" style="background-color:#ccc;">Column</div>
+</div>
+
+
+<div class="footer">
+  <p>Ingeniería de Sistemas Comptacionales - Práctica Interna <br />Segundo semestre 2018</p>
+</div>
