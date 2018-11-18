@@ -1,12 +1,12 @@
 .btn-group .button {
-  background-color: #4CAF50; /* Green */
-  border: 1px solid green;
+  background-color: darkblue; /* Azuuuuul!!! */
+  border: 1px blue;
   color: white;
-  padding: 15px 32px;
+  padding: 7px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
   float: left;
 }
@@ -14,5 +14,18 @@
   border-right: none; /* Prevent double borders */
 }
 .btn-group .button:hover {
-  background-color: #3e8e41;
+  background-color: cornflowerblue;
+}
+
+.button {
+  background-color: darkblue; /* Azuuuuul!!! */
+  border: 1px blue;
+  color: white;
+  padding: 7px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  float: right;
 }
