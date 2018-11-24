@@ -13,6 +13,7 @@ import { LoggerService } from './services/logger.service';
 import { appRoutingProviders, routing } from './app.routing';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { SearchStudentComponent } from './search-student/search-student.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchFormComponent } from './search-form/search-form.component';
     ErrorComponent,
     LogoutComponent,
     ProfileComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    SearchStudentComponent
   ],
   imports: [
     BrowserModule,

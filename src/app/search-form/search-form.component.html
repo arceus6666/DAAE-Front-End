@@ -1,51 +1,81 @@
 <h2>Búsqueda - Formulario</h2>
 
-<label for="formtype">Tipo</label>
-<select id="formtype" name="formtype">
-  v<option value="">-Seleccionar-</option>
-  <option value="altasbajas">Altas y Bajas</option>
-  <option value="cartaSolicitudPracEmpresarial">Carta de solicitud - Práctica empresarial</option>
-  <option value="cambioCampus">Cambio de campus</option>
-  <option value="cambioCarrera">Cambio de carrera</option>
-  <option value="evaPracEmp">Evaluación de prácticas empresariales</option>
-  <option value="evaPracEmpArq">Evaluación de prácticas empresariales de Arquitectura</option>
-  <option value="exaDif">Examen diferido</option>
-  <option value="">Examen de suficiencia</option>
-  <option value="">Materia incompleta</option>
-  <option value="">Modificación/Inclusión de calificaciones</option>
-  <option value="">Solicitud de alumno oyente</option>
-  <option value="">Solicitud de calificación pendiente</option>
-  <option value="">Solicitud de convalidación de asignaturas por cambio de universidad</option>
-  <option value="">Solicitud de homologación por cambio de plan de estudios</option>
-  <option value="">Solicitud de prácticas en empresa</option>
-</select>
+<div>
+
+  <label for="formtype">Tipo</label>
+  <select id="formtype" name="formtype">
+    v<option value="">-Seleccionar-</option>
+    <option value="altasbajas">Altas y Bajas</option>
+    <option value="cartaSolicitudPracEmpresarial">Carta de solicitud - Práctica empresarial</option>
+    <option value="cambioCampus">Cambio de campus</option>
+    <option value="cambioCarrera">Cambio de carrera</option>
+    <option value="evaPracEmp">Evaluación de prácticas empresariales</option>
+    <option value="evaPracEmpArq">Evaluación de prácticas empresariales de Arquitectura</option>
+    <option value="exaDif">Examen diferido</option>
+    <option value="">Examen de suficiencia</option>
+    <option value="">Materia incompleta</option>
+    <option value="">Modificación/Inclusión de calificaciones</option>
+    <option value="">Solicitud de alumno oyente</option>
+    <option value="">Solicitud de calificación pendiente</option>
+    <option value="">Solicitud de convalidación de asignaturas por cambio de universidad</option>
+    <option value="">Solicitud de homologación por cambio de plan de estudios</option>
+    <option value="">Solicitud de prácticas en empresa</option>
+  </select>
+
+  <label for="formstate">Estado</label>
+  <select id="formstate" name="formstate">
+    <option value="">-Seleccionar-</option>
+    <option value="">Pendiente</option>
+    <option value="">Finalilzado</option>
+  </select>
+
+  <label for="formcareer">Carrera</label>
+  <select id="formcareer" name="formcareer">
+    <option value="">-Todas-</option>
+    <option value="">Administración de Empresas</option>
+    <option value="">Arquitectura</option>
+    <option value="">Derecho</option>
+    <option value="">Diseño Gráfico</option>
+    <option value="">Economía</option>
+    <option value="">Ingeniería Civil</option>
+    <option value="">Ingeniería Comercial</option>
+    <option value="">Ingeniería de Sistemas Computacionales</option>
+    <option value="">Ingeniería Electromecanica</option>
+    <option value="">Ingeniería Electronica y Telecomunicaciones</option>
+    <option value="">Ingeniería Financiera</option>
+    <option value="">Ingeniería Industrial y de Sistemas</option>
+    <option value="">Ingeniería Petrolera</option>
+  </select>
+
+  <label for="formdate">Fecha</label>
+  <input id="formdate" type="date">
+
+</div>
+
+<div>
+
+  <h2>Resultados de búsqueda:</h2>
+
+  <table class="w3-table-all w3-hoverable">
+    <thead>
+    <tr class="w3-light-grey">
+      <th>Código Estudiante</th>
+      <th>Carrera</th>
+      <th>Tipo de Formulario</th>
+      <th>Estado</th>
+      <th>Respaldo</th>
+    </tr>
+    </thead>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+  </table>
 
 
-<label for="formstate">Estado</label>
-<select id="formstate" name="formstate">
-  <option value="">-Seleccionar-</option>
-  <option value="">Pendiente</option>
-  <option value="">Finalilzado</option>
-</select>
+</div>
 
-<label for="formcareer">Carrera</label>
-<select id="formcareer" name="formcareer">
-  <option value="">-Todas-</option>
-  <option value="">Ingeniería de Sistemas Computacionales</option>
-  <option value="">Ingeniería Electromecanica</option>
-  <option value="">Ingeniería Electronica y Telecomunicaciones</option>
-  <option value="">Ingeniería Civil</option>
-  <option value="">Ingeniería Financiera</option>
-  <option value="">Ingeniería Comercial</option>
-  <option value="">Ingeniería Industrial y de Sistemas</option>
-  <option value="">Ingeniería Petrolera</option>
-  <option value="">Arquitectura</option>
-  <option value="">Administración de Empresas</option>
-  <option value="">Diseño Gráfico</option>
-  <option value="">Derecho</option>
-  <option value="">Economía</option>
-  <option value="">Diseño Gráfico</option>
-</select>
 
-<label for="formdate">Fecha</label>
-<input id="formdate" type="date">
