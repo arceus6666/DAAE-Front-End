@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
 import { AddFormComponent } from './add-form/add-form.component';
+import { ViewFormComponent } from './view-form/view-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddFormComponent } from './add-form/add-form.component';
     ProfileComponent,
     SearchFormComponent,
     SearchStudentComponent,
-    AddFormComponent
+    AddFormComponent,
+    ViewFormComponent
   ],
   imports: [
     BrowserModule,
@@ -42,3 +44,4 @@ import { AddFormComponent } from './add-form/add-form.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -7,6 +7,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './profile/profile.component';
 import {SearchFormComponent} from './search-form/search-form.component';
 import {SearchStudentComponent} from './search-student/search-student.component';
+import {ViewFormComponent} from './view-form/view-form.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'search-form', component: SearchFormComponent },
   { path: 'search-student', component: SearchStudentComponent },
+  { path : 'view-form', component: ViewFormComponent},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: '**', component: ErrorComponent }
