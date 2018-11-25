@@ -5,70 +5,72 @@
   <!--<select id="formtype" name="formtype">-->
   <select id="formtype" name="formtype" [(ngModel)]="ftype">
     <option value="">-Seleccionar-</option>
-    <option value="altasbajas">Altas y Bajas</option>
-    <option value="cartaSolicitudPracEmpresarial">Carta de solicitud - Práctica empresarial</option>
-    <option value="cambioCampus">Cambio de campus</option>
-    <option value="cambioCarrera">Cambio de carrera</option>
-    <option value="evaPracEmp">Evaluación de prácticas empresariales</option>
-    <option value="evaPracEmpArq">Evaluación de prácticas empresariales de Arquitectura</option>
-    <option value="exaDif">Examen diferido</option>
-    <option value="">Examen de suficiencia</option>
-    <option value="">Materia incompleta</option>
-    <option value="">Modificación/Inclusión de calificaciones</option>
-    <option value="">Solicitud de alumno oyente</option>
-    <option value="">Solicitud de calificación pendiente</option>
-    <option value="">Solicitud de convalidación de asignaturas por cambio de universidad</option>
-    <option value="">Solicitud de homologación por cambio de plan de estudios</option>
-    <option value="">Solicitud de prácticas en empresa</option>
+    <option value="altasBajas">Altas y Bajas</option>
+    <option value="cartaSolPracEmpr">Carta de Solicitud - Práctica Empresarial</option>
+    <option value="cambioCampus">Cambio de Campus</option>
+    <option value="cambioCarrera">Cambio de Carrera</option>
+    <option value="evalPractEmpr">Evaluación de Prácticas Empresariales</option>
+    <option value="evalPractEmprArq">Evaluación de Prácticas Empresariales de Arquitectura</option>
+    <option value="examenDiferido">Examen Diferido</option>
+    <option value="examenSuficiencia">Examen de Suficiencia</option>
+    <option value="materiaIncompleta">Materia Incompleta</option>
+    <option value="modfCalificacion">Modificación/Inclusión de Calificaciones</option>
+    <option value="solicitudOyente">Solicitud de Alumno Oyente</option>
+    <option value="solPendiente">Solicitud de Calificación Pendiente</option>
+    <option value="solConvalidacion">Solicitud de Convalidación de Asignaturas por Cambio de Universidad</option>
+    <option value="solHomologacion">Solicitud de Homologación por Cambio de Plan de Estudios</option>
+    <option value="solEmpresa">Solicitud de Prácticas en Empresa</option>
   </select>
-
+  <br>
   <label for="formstate">Estado</label>
   <!--<select id="formstate" name="formstate">-->
   <select id="formstate" name="formstate" [(ngModel)]="fstate">
     <option value="">-Seleccionar-</option>
-    <option value="">Pendiente</option>
-    <option value="">Finalilzado</option>
+    <option value="false">Pendiente</option>
+    <option value="true">Finalilzado</option>
   </select>
-
+  <br>
   <label for="formcareer">Carrera</label>
   <!--<select id="formcareer" name="formcareer">-->
   <select id="formcareer" name="formcareer" [(ngModel)]="fcareer">
-    <option value="">-Todas-</option>
-    <option value="">Administración de Empresas</option>
-    <option value="">Arquitectura</option>
-    <option value="">Derecho</option>
-    <option value="">Diseño Gráfico</option>
-    <option value="">Economía</option>
-    <option value="">Ingeniería Civil</option>
-    <option value="">Ingeniería Comercial</option>
-    <option value="">Ingeniería de Sistemas Computacionales</option>
-    <option value="">Ingeniería Electromecanica</option>
-    <option value="">Ingeniería Electronica y Telecomunicaciones</option>
-    <option value="">Ingeniería Financiera</option>
-    <option value="">Ingeniería Industrial y de Sistemas</option>
-    <option value="">Ingeniería Petrolera</option>
+    <option>-Todas-</option>
+    <option value="admin">Administración de Empresas</option>
+    <option value="arqui">Arquitectura</option>
+    <option value="comu">Comunicación</option>
+    <option value="derecho">Derecho</option>
+    <option value="disgraf">Diseño Gráfico</option>
+    <option value="economia">Economía</option>
+    <option value="civil">Ingeniería Civil</option>
+    <option value="comercial">Ingeniería Comercial</option>
+    <option value="isc">Ingeniería de Sistemas Computacionales</option>
+    <option value="telecom">Ingeniería Electromecánica</option>
+    <option value="telecom">Ingeniería en Sistemas Electrónicos y de Telecomunicaciones</option>
+    <option value="financiera">Ingeniería Financiera</option>
+    <option value="industrial">Ingeniería Industrial y de Sistemas</option>
+    <option value="petrolera">Ingeniería Petrolera y Gas Natural</option>
+    <option value="produccion">Ingeniería de Producción</option>
+    <option value="mkt">Marketing y Logística</option>
   </select>
-
+  <br>
   <label for="formdate">Fecha</label>
   <!--<input id="formdate" type="date">-->
   <input id="formdate" type="date" [(ngModel)]="fdate">
-
+  <br>
 </div>
 
-<div><button name="click" ((click)="getForm()")>Buscar formulario</button></div>
+<div><button name="click" (click)="getForm()">Buscar formulario</button></div>
 
 <div>
   <h2>Resultados de búsqueda:</h2>
-
   <table class="w3-table-all w3-hoverable">
     <thead>
-    <tr class="w3-light-grey">
-      <th>Código Estudiante</th>
-      <th>Carrera</th>
-      <th>Tipo de Formulario</th>
-      <th>Estado</th>
-      <th>Respaldo</th>
-    </tr>
+      <tr class="w3-light-grey">
+        <th>Código Estudiante</th>
+        <th>Carrera</th>
+        <th>Tipo de Formulario</th>
+        <th>Estado</th>
+        <th>Respaldo</th>
+      </tr>
     </thead>
     <tr>
       <td>Jill</td>
@@ -78,8 +80,4 @@
       <td><a [routerLink]="['/view-form']" [routerLinkActive]="['red']">Disponible</a></td>
     </tr>
   </table>
-
-
 </div>
-
-
