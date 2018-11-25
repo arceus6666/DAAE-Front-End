@@ -12,7 +12,7 @@
     <nav role="navigation">
       <ul>
         <li>
-          <a *ngIf="!_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
+          <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
         </li>
         <li>
           <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']" [routerLinkActive]="['red']">Login</a>
@@ -21,10 +21,10 @@
           <a *ngIf="_logger.isLoged()" [routerLink]="['/logout']">Logout</a>
         </li>
         <li>
-          <a *ngIf="!_logger.isLoged()" [routerLink]="['/search-form']" [routerLinkActive]="['red']">Formularios</a>
+          <a *ngIf="_logger.isLoged()" [routerLink]="['/search-form']" [routerLinkActive]="['red']">Formularios</a>
         </li>
         <li>
-          <a *ngIf="!_logger.isLoged()" [routerLink]="['/search-student']" [routerLinkActive]="['red']">Estudiante</a>
+          <a *ngIf="_logger.isLoged()" [routerLink]="['/search-student']" [routerLinkActive]="['red']">Estudiante</a>
         </li>
       </ul>
     </nav>
