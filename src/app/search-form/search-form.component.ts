@@ -17,7 +17,7 @@ export class SearchFormComponent implements OnInit {
 
   private forms: any
 
-  constructor(public _service: RestapiService, _logger: LoggerService, private _router: Router) { }
+  constructor(public _service: RestapiService, private _logger: LoggerService, private _router: Router) { }
 
   ngOnInit() {
   }
