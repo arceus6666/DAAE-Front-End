@@ -3,7 +3,7 @@
 <div>
   <label for="formtype">Tipo</label>
   <!--<select id="formtype" name="formtype">-->
-  <select id="formtype" name="formtype">
+  <select id="formtype" name="formtype" [(ngModel)]="ftype">
     <option value="">-Seleccionar-</option>
     <option value="altasbajas">Altas y Bajas</option>
     <option value="cartaSolicitudPracEmpresarial">Carta de solicitud - Práctica empresarial</option>
@@ -23,14 +23,16 @@
   </select>
 
   <label for="formstate">Estado</label>
-  <select id="formstate" name="formstate">
+  <!--<select id="formstate" name="formstate">-->
+  <select id="formstate" name="formstate" [(ngModel)]="fstate">
     <option value="">-Seleccionar-</option>
     <option value="">Pendiente</option>
     <option value="">Finalilzado</option>
   </select>
 
   <label for="formcareer">Carrera</label>
-  <select id="formcareer" name="formcareer">
+  <!--<select id="formcareer" name="formcareer">-->
+  <select id="formcareer" name="formcareer" [(ngModel)]="fcareer">
     <option value="">-Todas-</option>
     <option value="">Administración de Empresas</option>
     <option value="">Arquitectura</option>
@@ -48,7 +50,8 @@
   </select>
 
   <label for="formdate">Fecha</label>
-  <input id="formdate" type="date">
+  <!--<input id="formdate" type="date">-->
+  <input id="formdate" type="date" [(ngModel)]="fdate">
 
 </div>
 
