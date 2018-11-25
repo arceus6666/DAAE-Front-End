@@ -16,6 +16,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { ViewFormComponent } from './view-form/view-form.component';
+import { AdminConfigComponent } from './admin-config/admin-config.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ViewFormComponent } from './view-form/view-form.component';
     SearchFormComponent,
     SearchStudentComponent,
     AddFormComponent,
-    ViewFormComponent
+    ViewFormComponent,
+    AdminConfigComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+<h2>Configuración de cuentas</h2>
+
+<div>
+  <h3>Cuentas existentes</h3>
+  <table class="w3-table-all w3-hoverable">
+    <thead>
+    <tr class="w3-light-grey">
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Rol</th>
+      <th>Contraseña</th>
+      <th>Editar</th>
+    </tr>
+    </thead>
+    <tr>
+      <td>00000</td>
+      <td>Username</td>
+      <td>Rol</td>
+      <td>12312rosita</td>
+      <td><a [routerLink]="['/view-form']" [routerLinkActive]="['red']">Editar</a></td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <h3>Nueva cuenta</h3>
+
+  <label for="namenewac">Nombre</label>
+  <input type="text" id="namenewac" name="stdcode">
+  <br>
+  <label for="codenewac">Codigo</label>
+  <input type="text" id="codenewac" name="stdcode">
+  <br>
+  <label for="passnewac">Contraseña</label>
+  <input type="text" id="passnewac" name="stdcode">
+  <br>
+  <label for="rolenewac">Rol</label>
+  <select id="rolenewac">
+    <option value="">-Seleccionar-</option>
+    <option value="">Administrador</option>
+    <option value="">Interno</option>
+    <option value="">Supervisor</option>
+  </select>
+  <br>
+
+  <button>Aceptar</button>
+
+</div>
