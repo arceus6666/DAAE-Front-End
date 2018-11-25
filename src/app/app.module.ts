@@ -14,6 +14,7 @@ import { appRoutingProviders, routing } from './app.routing';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
+import { AddFormComponent } from './add-form/add-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchStudentComponent } from './search-student/search-student.componen
     LogoutComponent,
     ProfileComponent,
     SearchFormComponent,
-    SearchStudentComponent
+    SearchStudentComponent,
+    AddFormComponent
   ],
   imports: [
     BrowserModule,
