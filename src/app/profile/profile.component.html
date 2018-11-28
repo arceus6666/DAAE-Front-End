@@ -1,14 +1,54 @@
+<br>
 <div>
   <h2>Mis Alarmas</h2>
-  <button>Agregar nuevo</button>
+  <!-- Button to open the modal login form -->
+  <button class="button button1 button2" style="float: right" onclick="document.getElementById('id01').style.display='block'">Agregar nuevo</button>
 
+  <!-- The Modal -->
+  <div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
 
+    <!-- Modal Content -->
+    <form class="modal-content animate">
+      <div class="container">
+        <h3>Nueva Alarma</h3>
 
+        <label for="formtarea">Tarea </label>
+        <select id="formtarea" name="formtarea">
+          <option value="">-Seleccionar-</option>
+          <option value="">Tarea 1</option>
+        </select>
+
+        <br>
+        <label for="formdatealarm">Fecha </label>
+        <input id="formdatealarm" type="date">
+
+        <br>
+        <label for="formtime">Cuando </label>
+        <input type="text" id="formtime" name="formtime" placeholder="Ej.: 17:45">
+
+        <button class="button button1 button2" type="submit">Agregar</button>
+        <button class="button button1 button2" type="button" onclick="document.getElementById('id01').style.display='none'">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
   <ul>
     <li>
       <div class="btn-group">
-        <button>Hecho</button>
-        <button>Retrasar</button>
+        <button class="button button1 button2">Hecho</button>
+        <button class="button button1 button2">Retrasar</button>
       </div>
     </li>
   </ul>
@@ -18,13 +58,66 @@
 
 <div>
   <h2>Mis Tareas</h2>
-  <button class="button">Agregar nuevo</button>
+  <!-- Button to open the modal login form -->
+  <button class="button button1 button2" style="float: right" onclick="document.getElementById('id01').style.display='block'">Agregar nuevo</button>
+
+  <!-- The Modal -->
+  <div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+    <!-- Modal Content -->
+    <form class="modal-content animate">
+      <div class="container">
+        <h3>Nueva Tarea</h3>
+
+        <label for="formtarea">Tarea </label>
+        <select id="formtarea" name="formtarea">
+          <option value="">-Seleccionar-</option>
+          <option value="">Tarea 1</option>
+        </select>
+
+        <br>
+        <label for="formdatealarm">Fecha </label>
+        <input id="formdatealarm" type="date">
+
+        <br>
+        <label for="formtime">Cuando </label>
+        <input type="text" id="formtime" name="formtime" placeholder="Ej.: 17:45">
+
+        <button class="button button1 button2" type="submit">Agregar</button>
+        <button class="button button1 button2" type="button" onclick="document.getElementById('id01').style.display='none'">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+  <br>
   <ul>
     <li>
-      <div class="btn-group">
-        <button>Hecho</button>
-        <button>Alarma</button>
-        <button>Reasignar</button>
+      <div class="divtarea">
+        <p>Ejemplo de Tarea 1</p>
+        <button class="button button1 button2" style="float: right">Hecho</button>
+        <button class="button button1 button2" style="float: right">Alarma</button>
+        <button class="button button1 button2" style="float: right">Reasignar</button>
+      </div>
+    </li>
+    <li>
+      <div class="divtarea">
+        <p>Ejemplo de Tarea 2</p>
+        <button class="button button1 button2" style="float: right">Hecho</button>
+        <button class="button button1 button2" style="float: right">Alarma</button>
+        <button class="button button1 button2" style="float: right">Reasignar</button>
       </div>
     </li>
   </ul>
@@ -35,6 +128,6 @@
 <div>
   <h2>Comentarios</h2>
   <ul>
-    <li></li>
+    <li>Ejemplo de comentario</li>
   </ul>
 </div>
