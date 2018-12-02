@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   private mydata: any
-  private code: number
-  private password: string
+  private codem: number
+  private passwordm: string
+  private err: boolean
   constructor(
     private _service: RestapiService,
     private _logger: LoggerService,
@@ -19,18 +20,22 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.err = false
   }
 
   onSubmit() {
-    this._service.getGlobal('/users/login', '', this.code + ' ' + this.password).subscribe(data => {
+    this.err = false
+    this._service.getGlobal('/users/login', '', this.codem + ' ' + this.passwordm).subscribe(data => {
       this.mydata = data
+      console.log(data)
       this._logger.setRole(this.mydata.role)
       this._logger.setID(this.mydata._id)
+      this._logger.logIn()
+      this._router.navigate(['home'])
     }, error => {
+      this.err = true
       console.log(error)
     })
-    this._logger.logIn()
-    this._router.navigate(['home'])
   }
 
 }

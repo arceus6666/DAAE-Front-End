@@ -9,15 +9,19 @@ import { LoggerService } from '../services/logger.service';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  private fstate: any
   private ftype: any
+  private fstate: any
   private fcareer: any
   private fdate: Date
   private arg: string
 
   private forms: any
 
-  constructor(public _service: RestapiService, private _logger: LoggerService, private _router: Router) { }
+  constructor(
+    public _service: RestapiService,
+    private _logger: LoggerService,
+    private _router: Router
+  ) { }
 
   ngOnInit() {
   }

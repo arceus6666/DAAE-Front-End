@@ -15,7 +15,7 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
     this._logger.logOut()
     this._logger.setRole('NoRole')
-    this._router.navigate(['home'])
+    this._router.navigate(['login'])
   }
 
 }
