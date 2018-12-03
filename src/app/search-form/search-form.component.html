@@ -4,7 +4,7 @@
     <label for="formtype">Tipo</label>
     <!--<select id="formtype" name="formtype">-->
     <select id="formtype" name="formtype" [(ngModel)]="ftype">
-      <option value="">-Seleccionar-</option>
+      <option value="">Vacío</option>
       <option value="altasBajas">Altas y Bajas</option>
       <option value="cartaSolPracEmpr">Carta de Solicitud - Práctica Empresarial</option>
       <option value="cambioCampus">Cambio de Campus</option>
@@ -25,7 +25,7 @@
     <label for="formstate">Estado</label>
     <!--<select id="formstate" name="formstate">-->
     <select id="formstate" name="formstate" [(ngModel)]="fstate">
-      <option value="">-Seleccionar-</option>
+      <option value="">Vacío</option>
       <option value="false">Pendiente</option>
       <option value="true">Finalilzado</option>
     </select>
@@ -33,7 +33,7 @@
     <label for="formcareer">Carrera</label>
     <!--<select id="formcareer" name="formcareer">-->
     <select id="formcareer" name="formcareer" [(ngModel)]="fcareer">
-      <option value="">-Todas-</option>
+      <option value="">Vacío</option>
       <option value="admin">Administración de Empresas</option>
       <option value="arqui">Arquitectura</option>
       <option value="comu">Comunicación</option>
@@ -53,7 +53,6 @@
     </select>
     <br>
     <label for="formdate">Fecha</label>
-    <!--<input id="formdate" type="date">-->
     <input id="formdate" type="date" [(ngModel)]="fdate">
     <br>
   </div>
@@ -62,7 +61,7 @@
 
   <div>
     <h2>Resultados de búsqueda:</h2>
-    <table class="w3-table-all w3-hoverable">
+    <table *ngIf="forms" class="w3-table-all w3-hoverable">
       <thead>
         <tr class="w3-light-grey">
           <th>Código Estudiante</th>
@@ -72,12 +71,14 @@
           <th>Respaldo</th>
         </tr>
       </thead>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-        <td>50</td>
-        <td><a [routerLink]="['/view-form']" [routerLinkActive]="['red']">Disponible</a></td>
+      <tr *ngFor="let f of forms">
+        <td>{{f.student_code}}</td>
+        <td>{{f.career}}</td>
+        <td>{{f.category}}</td>
+        <td *ngIf="f.status">Finalizado</td>
+        <td *ngIf="!f.status">Pendiente</td>
+        <td *ngIf="f.digital.have"><a [routerLink]="['/view-form']" [routerLinkActive]="['red']">Disponible</a></td>
+        <td *ngIf="!f.digital.have">No disponible</td>
       </tr>
     </table>
   </div>

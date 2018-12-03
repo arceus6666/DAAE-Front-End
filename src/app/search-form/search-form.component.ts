@@ -36,4 +36,6 @@ export class SearchFormComponent implements OnInit {
     })
   }
 
+  getCareer
+
 }
