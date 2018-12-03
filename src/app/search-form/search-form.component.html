@@ -27,7 +27,7 @@
     <select id="formstate" name="formstate" [(ngModel)]="fstate">
       <option value="">Vacío</option>
       <option value="false">Pendiente</option>
-      <option value="true">Finalilzado</option>
+      <option value="true">Finalizado</option>
     </select>
     <br>
     <label for="formcareer">Carrera</label>
@@ -59,9 +59,9 @@
 
   <div><button name="click" (click)="getForm()">Buscar formulario</button></div>
 
-  <div>
+  <div *ngIf="forms">
     <h2>Resultados de búsqueda:</h2>
-    <table *ngIf="forms" class="w3-table-all w3-hoverable">
+    <table class="w3-table-all w3-hoverable">
       <thead>
         <tr class="w3-light-grey">
           <th>Código Estudiante</th>
@@ -73,7 +73,7 @@
       </thead>
       <tr *ngFor="let f of forms">
         <td>{{f.student_code}}</td>
-        <td>{{f.career}}</td>
+        <td>{{getCareer(f.career)}}</td>
         <td>{{f.category}}</td>
         <td *ngIf="f.status">Finalizado</td>
         <td *ngIf="!f.status">Pendiente</td>
