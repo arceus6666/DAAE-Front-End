@@ -14,6 +14,13 @@ body {
   font-size: 35px;
 }
 
+.footer {
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
 /* Create three unequal columns that floats next to each other */
 .column {
   float: left;
@@ -29,6 +36,8 @@ body {
 
 /* Middle column */
 .column.middle {
+  background-image: url("../assets/res/background1.png");
+  background-size: cover;
   width: 75%;
   height: 100%;
 }

@@ -17,6 +17,8 @@ import { SearchStudentComponent } from './search-student/search-student.componen
 import { AddFormComponent } from './add-form/add-form.component';
 import { ViewFormComponent } from './view-form/view-form.component';
 import { AdminConfigComponent } from './admin-config/admin-config.component';
+import { InsertFormComponent } from './insert-form/insert-form.component';
+import { InsertStudentComponent } from './insert-student/insert-student.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AdminConfigComponent } from './admin-config/admin-config.component';
     SearchStudentComponent,
     AddFormComponent,
     ViewFormComponent,
-    AdminConfigComponent
+    AdminConfigComponent,
+    InsertFormComponent,
+    InsertStudentComponent
   ],
   imports: [
     BrowserModule,
