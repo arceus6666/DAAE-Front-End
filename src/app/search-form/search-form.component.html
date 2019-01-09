@@ -1,10 +1,12 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
 <div *ngIf="_logger.isLoged()">
   <h2>Búsqueda - Formulario</h2>
   <div>
-    <label for="formtype">Tipo</label>
+    <label for="formtype">Tipo</label><br />
     <!--<select id="formtype" name="formtype">-->
     <select id="formtype" name="formtype" [(ngModel)]="ftype">
-      <option value="">Vacío</option>
+      <option value="">Cualquiera</option>
       <option value="altasBajas">Altas y Bajas</option>
       <option value="cartaSolPracEmpr">Carta de Solicitud - Práctica Empresarial</option>
       <option value="cambioCampus">Cambio de Campus</option>
@@ -22,18 +24,18 @@
       <option value="solEmpresa">Solicitud de Prácticas en Empresa</option>
     </select>
     <br>
-    <label for="formstate">Estado</label>
+    <label for="formstate">Estado</label><br />
     <!--<select id="formstate" name="formstate">-->
     <select id="formstate" name="formstate" [(ngModel)]="fstate">
-      <option value="">Vacío</option>
+      <option value="">Cualquiera</option>
       <option value="false">Pendiente</option>
       <option value="true">Finalizado</option>
     </select>
     <br>
-    <label for="formcareer">Carrera</label>
+    <label for="formcareer">Carrera</label><br />
     <!--<select id="formcareer" name="formcareer">-->
     <select id="formcareer" name="formcareer" [(ngModel)]="fcareer">
-      <option value="">Vacío</option>
+      <option value="">Cualquiera</option>
       <option value="admin">Administración de Empresas</option>
       <option value="arqui">Arquitectura</option>
       <option value="comu">Comunicación</option>
@@ -69,16 +71,18 @@
           <th>Tipo de Formulario</th>
           <th>Estado</th>
           <th>Respaldo</th>
+          <th>Ver</th>
         </tr>
       </thead>
       <tr *ngFor="let f of forms">
         <td>{{f.student_code}}</td>
         <td>{{getCareer(f.career)}}</td>
-        <td>{{f.category}}</td>
+        <td>{{getType(f.category)}}</td>
         <td *ngIf="f.status">Finalizado</td>
         <td *ngIf="!f.status">Pendiente</td>
-        <td *ngIf="f.digital.have"><a [routerLink]="['/view-form']" [routerLinkActive]="['red']">Disponible</a></td>
+        <td *ngIf="f.digital.have"><a>Disponible</a></td>
         <td *ngIf="!f.digital.have">No disponible</td>
+        <td><a [routerLink]="['/view-form/'+f._id]" style="text-decoration:none;"><i class="fas fa-search"></i></a></td>
       </tr>
     </table>
   </div>

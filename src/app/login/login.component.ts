@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     private _router: Router
   ) {
     this.err = false;
-    this.remember = true;
+    this.remember = false;
   }
 
   ngOnInit() {
@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
       // console.log(data)
       mdata = data;
       this._logger.logIn(mdata.msg._id, mdata.msg.role, mdata.token);
+      console.log(this.remember)
       if (this.remember) {
         this._stuffManager.storeItem('token', mdata.token);
       }
@@ -51,6 +52,10 @@ export class LoginComponent implements OnInit {
       console.log(error)
       this.err = true;
     });
+  }
+
+  check() {
+    this.remember = !this.remember;
   }
 
 }

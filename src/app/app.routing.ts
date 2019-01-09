@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'search-form', component: SearchFormComponent },
   { path: 'search-student', component: SearchStudentComponent },
-  { path: 'view-form', component: ViewFormComponent },
+  { path: 'view-form/:id', component: ViewFormComponent },
   { path: 'insert-form', component: InsertFormComponent },
   { path: 'admin-config', component: AdminConfigComponent },
   { path: 'login', component: LoginComponent },

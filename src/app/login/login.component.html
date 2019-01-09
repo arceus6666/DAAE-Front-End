@@ -3,23 +3,29 @@
 <div class="divi">
   <div *ngIf="!logged">
     <form #formUser="ngForm" (ngSubmit)="onSubmit(); formUser.reset();">
-      <label>
-          <h5>Código:</h5>
-      </label>
-      <input type="number" name="code" #code="ngModel" [(ngModel)]="codem" required pattern= "[0-9]+">
+      <label>Código:</label>
+      <input type="number" name="code" #code="ngModel" [(ngModel)]="codem" required pattern="[0-9]+">
       <span *ngIf="code.touched && !code.valid">El código debe ser solo numérico.<br></span>
-      <br>
-
-      <label>
-          <h5>Password:</h5>
-      </label>
-      <input type="password" name="pass1" #pass1="ngModel" [(ngModel)]="passwordm" required><br>
-      <input class="button" type="submit" value="Login" [disabled]="!formUser.form.valid" />
-      <br>
+      <br />
+      <label>Password:</label>
+      <input type="password" name="pass1" #pass1="ngModel" [(ngModel)]="passwordm" required>
+      <br /><br />
+      <div>
+        <div class="control-group">
+          <label class="container">Recuérdame
+            <input type="checkbox" (click)="check()">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="control-group">
+          <input class="button" type="submit" value="Login" [disabled]="!formUser.form.valid" />
+        </div>
+      </div>
+      <br />
       <div *ngIf="err">
         <div class="alert info">
           <span class="closebtn" onclick="this.parentElement.style.display='none'; this.err=false">&times;</span>
-          ¡Información Incorrecta!
+          Información Incorrecta!
         </div>
       </div>
     </form>

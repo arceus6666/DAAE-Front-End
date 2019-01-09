@@ -1,34 +1,53 @@
-<h2>Visualización de Formulario</h2>
-
-<div>
-  <table>
-    <tr>
-      <td><h4>Tipo:</h4></td>
-      <td>Respuesta</td>
-    </tr>
-    <tr>
-      <td><h4>Fecha de entrada:</h4></td>
-      <td>Respuesta</td>
-    </tr>
-    <tr>
-      <td><h4>Fecha de modificación:</h4></td>
-      <td>Respuesta</td>
-    </tr>
-    <tr>
-      <td><h4>Estudiante:</h4></td>
-      <td>Respuesta</td>
-    </tr>
-    <tr>
-      <td><h4>Carrera:</h4></td>
-      <td>Respuesta</td>
-    </tr>
-    <tr>
-      <td><h4>Estado:</h4></td>
-      <td>Respuesta</td>
-    </tr>
-    <tr>
-      <td><h4>Respaldo:</h4></td>
-      <td>Respuesta</td>
-    </tr>
-  </table>
+<div style="padding: 2%;">
+  <h2>Visualización de Formulario</h2>
+  <div *ngIf="form">
+    <table>
+      <tr>
+        <td>
+          <h4>Tipo:</h4>
+        </td>
+        <td>{{getType(form.category)}}</td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Fecha de entrada:</h4>
+        </td>
+        <td>{{form.registration_date | date}}</td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Fecha de modificación:</h4>
+        </td>
+        <td>{{form.last_modified | date}}</td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Estudiante:</h4>
+        </td>
+        <td>{{form.student_code}}</td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Carrera:</h4>
+        </td>
+        <td>{{getCareer(form.career)}}</td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Estado:</h4>
+        </td>
+        <td>{{form.status}}</td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Respaldo:</h4>
+        </td>
+        <td *ngIf="form.digital"><a>ver</a></td>
+        <td *ngIf="!form.digital"><a>No disponible</a></td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="form">
+    <button [routerLink]="['/search-form']">Volver</button>
+  </div>
 </div>

@@ -1,12 +1,14 @@
 <div *ngIf="_logger.isLoged()">
   <h2>Búsqueda - Estudiante</h2>
-
   <div>
-    <label for="fname">Código </label>
-    <input type="number" name="stdcode" #stdcode="ngModel" [(ngModel)]="code_var" placeholder="Ej.: 20202">
-    <button name="click" (click)="getStudent()">Buscar</button>
+    <div class="control-group" style="width:40%;">
+      <label for="fname" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; font-size: 150%">Código
+      </label>
+      <input type="number" name="stdcode" #stdcode="ngModel" [(ngModel)]="code_var" placeholder="Ej.: 20202">
+    </div>
+    <div class="control-group">
+      <button name="click" (click)="getStudent()">Buscar</button></div>
   </div>
-
   <div *ngIf="student">
     <div>
       <div>

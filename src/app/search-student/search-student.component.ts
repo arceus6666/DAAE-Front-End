@@ -69,4 +69,38 @@ export class SearchStudentComponent implements OnInit {
     }
   }
 
+  private getType(t: string): string {
+    switch (t) {
+      case 'altasBajas':
+        return 'Altas y Bajas';
+      case 'cartaSolPracEmpr':
+        return 'Carta de Solicitud - Práctica Empresarial';
+      case 'cambioCampus':
+        return 'Cambio de Campus';
+      case 'cambioCarrera':
+        return 'Cambio de Carrera';
+      case 'evalPractEmpr':
+        return 'Evaluación de Prácticas Empresariales';
+      case 'evalPractEmprArq':
+        return 'Evaluación de Prácticas Empresariales de Arquitectura';
+      case 'examenDiferido':
+        return 'Examen Diferido';
+      case 'examenSuficiencia':
+        return 'Examen de Suficiencia';
+      case 'materiaIncompleta':
+        return 'Materia Incompleta';
+      case 'modfCalificacion':
+        return 'Modificación/Inclusión de Calificaciones';
+      case 'solicitudOyente':
+        return 'Solicitud de Alumno Oyente';
+      case 'solPendiente':
+        return 'Solicitud de Calificación Pendiente';
+      case 'solConvalidacion':
+        return 'Solicitud de Convalidación de Asignaturas por Cambio de Universidad';
+      case 'solHomologacion':
+        return 'Solicitud de Homologación por Cambio de Plan de Estudios';
+      case 'solEmpresa':
+        return 'Solicitud de Prácticas en Empresa';
+    }
+  }
 }

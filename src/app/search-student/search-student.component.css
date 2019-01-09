@@ -1,12 +1,13 @@
 input[type="number"],
 select {
-  width: 10%;
+  width: 25%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  background: transparent;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -45,6 +46,7 @@ div {
   height: 50%;
   margin: 10px;
 }
+
 .title {
   font-size: 250%;
 }
