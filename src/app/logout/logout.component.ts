@@ -10,12 +10,15 @@ import { LoggerService } from '../services/logger.service';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private _logger: LoggerService, private _router: Router) { }
+  constructor(
+    private _logger: LoggerService,
+    private _router: Router
+  ) {
+    this._logger.logOut();
+    this._router.navigate(['home']);
+  }
 
   ngOnInit() {
-    this._logger.logOut()
-    this._logger.setRole('NoRole')
-    this._router.navigate(['login'])
   }
 
 }

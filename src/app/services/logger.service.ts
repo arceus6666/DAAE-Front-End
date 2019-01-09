@@ -1,42 +1,68 @@
 import { Injectable } from '@angular/core';
+import { StuffManagerService } from './stuff-manager.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoggerService {
-  private role: string
-  private loged: boolean
-  private _id: string
-  constructor() {
-    this.role = 'normal'
-    this.loged = false
+
+  private _role: string;
+  private _logged: boolean;
+  private _id: string;
+  private _token: string;
+
+  constructor(
+    private _stuffManager: StuffManagerService
+  ) {
+    this._id = null;
+    this._role = null;
+    this._token = null;
+    this._logged = false;
   }
 
-  setID(id) {
-    this._id = id
+  public logIn(id: string, role: string, tk: string): void {
+    this._id = id;
+    this._role = role;
+    this._token = tk;
+    this._logged = true;
   }
 
-  getID() {
-    return this._id
+  public logOut(): void {
+    this._id = null;
+    this._role = null;
+    this._token = null;
+    this._logged = false;
+
+    if (this._stuffManager.getItem('token')) {
+      this._stuffManager.removeItem('token');
+    }
   }
 
-  logIn() {
-    this.loged = true
+  public isLoged(): boolean {
+    return this._logged;
   }
 
-  logOut() {
-    this.loged = false
+  public setToken(tk: string): void {
+    this._token = tk;
   }
 
-  isLoged() {
-    return this.loged
+  public getToken(): string {
+    return this._token;
   }
 
-  setRole(r) {
-    this.role = r
+  public setID(id: string): void {
+    this._id = id;
   }
 
-  getRole() {
-    return this.role
+  public getID(): string {
+    return this._id;
+  }
+
+  public setRole(r: string): void {
+    this._role = r;
+  }
+
+  public getRole(): string {
+    return this._role;
   }
 }

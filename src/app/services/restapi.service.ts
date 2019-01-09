@@ -1,49 +1,98 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestapiService {
-  private url: string
-  private valor: string
+  private backend_url: string
+
   constructor(private _http: HttpClient) {
-    this.url = 'http://localhost:7890'
+    this.backend_url = 'http://localhost:7890'
   }
 
-  public getGlobal<Object>(urlMethod: string, token: string, param: string) {
-    console.log(this.url + urlMethod)
-    return this._http.get<Object>(this.url + urlMethod, {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-        .set('token', token),
-      params: new HttpParams().set('param', param)
-    })
+  public getGlobal<Object>(
+    urlMethod: string[],
+    params?: HttpParams,
+    token?: string
+  ): Observable<Object> {
+    // console.log(this.backend_url + urlMethod)
+    let url = '';
+    let hs = new HttpHeaders();
+
+    hs.set('Content-Type', 'application/json');
+    if (token) hs.set('Authorization', token);
+
+    for (let m in urlMethod) {
+      url += '/' + urlMethod[m];
+    }
+
+    return this._http.get<Object>(this.backend_url + url, {
+      headers: hs,
+      params: params
+    });
   }
 
-  public postGlobal<Object>(object: any, urlMethod: string, token: string) {
-    this.valor = JSON.stringify(object)
-    return this._http.post<Object>(this.url + urlMethod, this.valor, {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-        .set('token', token)
-    })
+  public postGlobal<Object>(
+    urlMethod: string[],
+    object: any,
+    token?: string
+  ) {
+    let url = '';
+    let hs = new HttpHeaders();
+    let valor = JSON.stringify(object);
+
+    hs.set('Content-Type', 'application/json');
+    if (token) hs.set('Authorization', token);
+
+    for (let m in urlMethod) {
+      url += '/' + urlMethod[m];
+    }
+
+    return this._http.post<Object>(this.backend_url + url, valor, {
+      headers: hs
+    });
   }
 
-  public deleteGlobal<Object>(code: string, urlMethod: string, token: string) {
-    return this._http.delete<Object>(this.url + urlMethod + code, {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-        .set('token', token)
-    })
+  public deleteGlobal<Object>(
+    urlMethod: string[],
+    code: string,
+    token?: string
+  ) {
+    let url = '';
+    let hs = new HttpHeaders();
+
+    hs.set('Content-Type', 'application/json');
+    if (token) hs.set('Authorization', token);
+
+    for (let m in urlMethod) {
+      url += '/' + urlMethod[m];
+    }
+
+    return this._http.delete<Object>(this.backend_url + url + code, {
+      headers: hs
+    });
   }
 
-  public putGlobal<Object>(object: any, urlMethod: string, token: string) {
-    this.valor = JSON.stringify(object)
-    return this._http.put<Object>(this.url + urlMethod, this.valor, {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-        .set('token', token)
-    })
+  public putGlobal<Object>(
+    urlMethod: string[],
+    object: any,
+    token?: string
+  ) {
+    let url = '';
+    let hs = new HttpHeaders();
+    let valor = JSON.stringify(object);
+
+    hs.set('Content-Type', 'application/json');
+    if (token) hs.set('Authorization', token);
+
+    for (let m in urlMethod) {
+      url += '/' + urlMethod[m];
+    }
+
+    return this._http.put<Object>(this.backend_url + url, valor, {
+      headers: hs
+    });
   }
 }
