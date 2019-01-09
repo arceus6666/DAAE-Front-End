@@ -17,12 +17,10 @@
       <input class="button" type="submit" value="Login" [disabled]="!formUser.form.valid" />
       <br>
       <div *ngIf="err">
-        <br /><br /><br />
         <div class="alert info">
           <span class="closebtn" onclick="this.parentElement.style.display='none'; this.err=false">&times;</span>
           ¡Información Incorrecta!
         </div>
-        <br />
       </div>
     </form>
   </div>
