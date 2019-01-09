@@ -52,12 +52,12 @@
       <option value="mkt">Marketing y Logística</option>
     </select>
     <br>
-    <label for="formdate">Fecha</label>
+    <label for="formdate">Fecha</label><br />
     <input id="formdate" type="date" [(ngModel)]="fdate">
     <br>
   </div>
 
-  <div><button name="click" (click)="getForm()">Buscar formulario</button></div>
+  <div><button name="click" (click)="getForm()">Buscar</button></div>
 
   <div *ngIf="forms">
     <h2>Resultados de búsqueda:</h2>

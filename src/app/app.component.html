@@ -16,14 +16,15 @@
       <div class="subnav">
         <button *ngIf="_logger.isLoged()" class="subnavbtn">Estudiante <i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
-          <a [routerLink]="['/search-student']" [routerLinkActive]="['red']">Buscar Estudiante</a>
+          <a [routerLink]="['/search-student']">Buscar Estudiante</a>
         </div>
       </div>
 
       <div class="subnav">
         <button *ngIf="_logger.isLoged()" class="subnavbtn">Formularios <i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
-          <a [routerLink]="['/search-form']" [routerLinkActive]="['red']">Buscar Formularios</a>
+          <a [routerLink]="['/search-form']">Buscar Formularios</a>
+          <a [routerLink]="['/insert-form']">Añadir Formulario</a>
         </div>
       </div>
     </nav>

@@ -36,7 +36,7 @@ body {
 /* Middle column */
 .column.middle {
   background-image: url("../assets/res/background1.png");
-  background-size: cover;
+  background-size: 100%;
   width: 75%;
   height: 100%;
 }
@@ -262,7 +262,7 @@ input[type=submit]:hover {
 .navbar a {
   float: left;
   font-size: 16px;
-  color: white;
+  color: #f4b400;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -277,7 +277,7 @@ input[type=submit]:hover {
   font-size: 16px;
   border: none;
   outline: none;
-  color: white;
+  color: #f4b400;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -286,6 +286,7 @@ input[type=submit]:hover {
 
 .navbar a:hover, .subnav:hover .subnavbtn {
   background-color: #f4b400;
+  color: darkblue;
 }
 
 .subnav-content {
@@ -300,13 +301,13 @@ input[type=submit]:hover {
 
 .subnav-content a {
   float: left;
-  color: white;
+  color: darkblue;
   text-decoration: none;
 }
 
 .subnav-content a:hover {
-  background-color: #81C784;
-  color: black;
+  background-color: darkblue;
+  color: #f4b400;
 }
 
 .subnav:hover .subnav-content {

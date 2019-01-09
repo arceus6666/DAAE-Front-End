@@ -4,30 +4,48 @@
   <div>
     <label for="fname">Código </label>
     <input type="number" name="stdcode" #stdcode="ngModel" [(ngModel)]="code_var" placeholder="Ej.: 20202">
-    <button name="click" (click)="getStudent()">Buscar estudiante</button>
+    <button name="click" (click)="getStudent()">Buscar</button>
   </div>
 
   <div *ngIf="student">
     <div>
-      <h2>Nombre Completo: {{student.name.firstName}} {{student.name.secondName?student.name.secondName + ' ': '
-        '}}{{student.name.firstSurname}}
-        {{student.name.secondSurname}}</h2>
-      <h3>Carrera: {{getCareer(student.career)}}</h3>
-      <h3>Carnet de identidad:</h3>
-      <h3>Fecha de nacimiento:</h3>
-      <h3>Nacionalidad:</h3>
-      <h3>Telefono:</h3>
-      <h3>Direccion:</h3>
-      <h3>Colegio:</h3>
-      <h3>Ingreso:</h3>
-      <h3>Tipo de sangre:</h3>
-      <h3>Tutor:</h3>
-      <h3>Telefono de tutor:</h3>
-      <h3>Carnet de tutor:</h3>
-
+      <div>
+        <div>
+          <div class="control-group title">
+            Nombre Completo:
+          </div>
+          <div class="control-group content">
+            {{student.name.firstName}} {{student.name.secondName?student.name.secondName + ' ': '
+            '}}{{student.name.firstSurname}} {{student.name.secondSurname}}
+          </div>
+        </div>
+        <div>
+          <div class="control-group title">
+            Carrera:<br />
+            Carnet de identidad:<br />
+            Fecha de nacimiento:<br />
+            Nacionalidad:<br />
+            Telefono:<br />
+            Direccion:<br />
+          </div>
+          <div class="control-group content">
+            {{getCareer(student.career)}}<br />
+          </div>
+          <div class="control-group title">
+            Colegio:<br />
+            Ingreso:<br />
+            Tipo de sangre:<br />
+            Tutor:<br />
+            Telefono de tutor:<br />
+            Carnet de tutor:<br />
+          </div>
+          <div class="control-group content">
+            yolo
+          </div>
+        </div>
+      </div>
       <div>
         <h3>Procesos:</h3>
-
         <ul>
           <li>
             <h4>Tipo de formulario:</h4>
@@ -37,8 +55,6 @@
           </li>
         </ul>
       </div>
-
     </div>
-
   </div>
 </div>
