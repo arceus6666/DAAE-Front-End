@@ -15,21 +15,17 @@ export class RestapiService {
   public getGlobal<Object>(
     urlMethod: string[],
     params?: HttpParams,
-    token?: string
+    headers?: HttpHeaders
   ): Observable<Object> {
     // console.log(this.backend_url + urlMethod)
     let url = '';
-    let hs = new HttpHeaders();
-
-    hs.set('Content-Type', 'application/json');
-    if (token) hs.set('Authorization', token);
 
     for (let m in urlMethod) {
       url += '/' + urlMethod[m];
     }
 
     return this._http.get<Object>(this.backend_url + url, {
-      headers: hs,
+      headers: headers,
       params: params
     });
   }

@@ -1,42 +1,44 @@
-<h2>Búsqueda - Estudiante</h2>
+<div *ngIf="_logger.isLoged()">
+  <h2>Búsqueda - Estudiante</h2>
 
-<div>
-    <label for="fname">Código   </label>
-    <input type="text" id="fname" name="stdcode" placeholder="Ej.: 20202">
-    <button>Submit</button>
-</div>
-
-<div>
-  <h2>Resultados de búsqueda:</h2>
   <div>
-    <h3>Nombres:</h3>
-    <h3>Apellidos:</h3>
-    <h3>Carrera:</h3>
-    <h3>Carnet de identidad:</h3>
-    <h3>Fecha de nacimiento:</h3>
-    <h3>Nacionalidad:</h3>
-    <h3>Telefono:</h3>
-    <h3>Direccion:</h3>
-    <h3>Colegio:</h3>
-    <h3>Ingreso:</h3>
-    <h3>Tipo de sangre:</h3>
-    <h3>Tutor:</h3>
-    <h3>Telefono de Tutor:</h3>
-    <h3>Carnet de tutor:</h3>
+    <label for="fname">Código </label>
+    <input type="number" name="stdcode" #stdcode="ngModel" [(ngModel)]="code_var" placeholder="Ej.: 20202">
+    <button name="click" (click)="getStudent()">Buscar estudiante</button>
+  </div>
 
+  <div *ngIf="student">
     <div>
-      <h3>Procesos:</h3>
+      <h2>Nombre Completo: {{student.name.firstName}} {{student.name.secondName?student.name.secondName + ' ': '
+        '}}{{student.name.firstSurname}}
+        {{student.name.secondSurname}}</h2>
+      <h3>Carrera: {{getCareer(student.career)}}</h3>
+      <h3>Carnet de identidad:</h3>
+      <h3>Fecha de nacimiento:</h3>
+      <h3>Nacionalidad:</h3>
+      <h3>Telefono:</h3>
+      <h3>Direccion:</h3>
+      <h3>Colegio:</h3>
+      <h3>Ingreso:</h3>
+      <h3>Tipo de sangre:</h3>
+      <h3>Tutor:</h3>
+      <h3>Telefono de tutor:</h3>
+      <h3>Carnet de tutor:</h3>
 
-      <ul>
-        <li>
-          <h4>Tipo de formulario:</h4>
-          <h4>Fecha de ingreso:</h4>
-          <h4>Estado:</h4>
-          <button class="button">Visualizar</button>
-        </li>
-      </ul>
+      <div>
+        <h3>Procesos:</h3>
+
+        <ul>
+          <li>
+            <h4>Tipo de formulario:</h4>
+            <h4>Fecha de ingreso:</h4>
+            <h4>Estado:</h4>
+            <button class="button">Visualizar</button>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
-</div>
-
+  </div>
 </div>

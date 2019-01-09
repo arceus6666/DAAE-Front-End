@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RestapiService } from '../services/restapi.service';
-import { LoggerService } from '../services/logger.service';
 import { HttpParams } from '@angular/common/http';
+import { LoggerService } from '../services/logger.service';
 
 @Component({
   selector: 'app-search-form',
@@ -19,6 +19,7 @@ export class SearchFormComponent implements OnInit {
 
   constructor(
     public _service: RestapiService,
+    public _logger: LoggerService,
     private _router: Router
   ) { }
 
@@ -27,10 +28,10 @@ export class SearchFormComponent implements OnInit {
 
   getForm() {
     let params = new HttpParams()
-      .set('type', this.ftype)
-      .set('state', this.fstate)
-      .set('career', this.fcareer)
-      .set('date', this.fdate.toString());
+      .set('ftype', this.ftype)
+      .set('fstate', this.fstate)
+      .set('fcareer', this.fcareer)
+      .set('fdate', this.fdate + '');
 
     this._service.getGlobal(['forms', 'search'], params).subscribe(data => {
       let mdata: any = data;

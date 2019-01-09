@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     private _router: Router
   ) {
     this.err = false;
+    this.remember = true;
   }
 
   ngOnInit() {
