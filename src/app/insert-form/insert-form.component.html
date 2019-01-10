@@ -1,3 +1,111 @@
-<p>
-  insert-form works!
-</p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+<div *ngIf="_logger.isLoged()">
+  <h2>Búsqueda - Formulario</h2>
+  <div>
+    <label for="formtype">Tipo</label><br />
+    <!--<select id="formtype" name="formtype">-->
+    <select id="formtype" name="formtype" [(ngModel)]="this.form.category">
+      <option value="altasBajas">Altas y Bajas</option>
+      <option value="cartaSolPracEmpr">Carta de Solicitud - Práctica Empresarial</option>
+      <option value="cambioCampus">Cambio de Campus</option>
+      <option value="cambioCarrera">Cambio de Carrera</option>
+      <option value="evalPractEmpr">Evaluación de Prácticas Empresariales</option>
+      <option value="evalPractEmprArq">Evaluación de Prácticas Empresariales de Arquitectura</option>
+      <option value="examenDiferido">Examen Diferido</option>
+      <option value="examenSuficiencia">Examen de Suficiencia</option>
+      <option value="materiaIncompleta">Materia Incompleta</option>
+      <option value="modfCalificacion">Modificación/Inclusión de Calificaciones</option>
+      <option value="solicitudOyente">Solicitud de Alumno Oyente</option>
+      <option value="solPendiente">Solicitud de Calificación Pendiente</option>
+      <option value="solConvalidacion">Solicitud de Convalidación de Asignaturas por Cambio de Universidad</option>
+      <option value="solHomologacion">Solicitud de Homologación por Cambio de Plan de Estudios</option>
+      <option value="solEmpresa">Solicitud de Prácticas en Empresa</option>
+    </select>
+    <br />
+    <label for="formstate">Estado</label><br />
+    <!--<select id="formstate" name="formstate">-->
+    <select id="formstate" name="formstate" [(ngModel)]="this.form.status">
+      <option value="false">Pendiente</option>
+      <option value="true">Finalizado</option>
+    </select>
+    <br />
+    <label for="formcareer">Carrera</label><br />
+    <!--<select id="formcareer" name="formcareer">-->
+    <select id="formcareer" name="formcareer" [(ngModel)]="this.form.career">
+      <option value="admin">Administración de Empresas</option>
+      <option value="arqui">Arquitectura</option>
+      <option value="comu">Comunicación</option>
+      <option value="derecho">Derecho</option>
+      <option value="disgraf">Diseño Gráfico</option>
+      <option value="economia">Economía</option>
+      <option value="civil">Ingeniería Civil</option>
+      <option value="comercial">Ingeniería Comercial</option>
+      <option value="isc">Ingeniería de Sistemas Computacionales</option>
+      <option value="telecom">Ingeniería Electromecánica</option>
+      <option value="telecom">Ingeniería en Sistemas Electrónicos y de Telecomunicaciones</option>
+      <option value="financiera">Ingeniería Financiera</option>
+      <option value="industrial">Ingeniería Industrial y de Sistemas</option>
+      <option value="petrolera">Ingeniería Petrolera y Gas Natural</option>
+      <option value="produccion">Ingeniería de Producción</option>
+      <option value="mkt">Marketing y Logística</option>
+    </select>
+    <br />
+
+    <!--revisar para upload de imagen-->
+    <form class="upload-btn-wrapper" name="formUpload">
+      <button class="btn">Respaldo digital</button>
+      <input type="file" id="mfile" (change)="onFileChange($event);" />
+    </form><br />
+
+    <!--img *ngIf="this.form.digital && this.form.digital.is" [src]="this._cleaner.bypassSecurityTrustUrl(this.imageString)"/-->
+
+    <label for="code">Código estudiante</label><br />
+    <input type="number" name="code1" #code1="ngModel" [(ngModel)]="this.form.student_code" placeholder="Ej: 12345"><br />
+
+    <label for="code">Código formulario</label><br />
+    <input type="text" name="code2" #code2="ngModel" [(ngModel)]="this.form.code" placeholder="Ej: A3-43-VG"><br />
+
+    <div *ngIf="this.form.category === 'materiaIncompleta'">
+      <!--quedar bien la lista de materias-->
+      <label for="mats">Materia</label><br />
+      <select id="mats" name="materias" [(ngModel)]="this.form.materia_incompleta.materia">
+        <option value="mate1">Matemáticas 1</option>
+        <option>···</option>
+      </select><br />
+      <label for="semestre">Semestre</label><br />
+      <input name="semestre" #semestre="ngModel" [(ngModel)]="this.form.materia_incompleta.semester" placeholder="Ej: II-2015">
+    </div>
+    <div *ngIf="this.form.category === 'examenSuficiencia'">
+      <!--quedar bien la lista de materias-->
+      <label for="mats">Materia</label><br />
+      <select id="mats" name="materias" [(ngModel)]="this.form.examen_de_suficiencia.materia">
+        <option value="mate1">Matemáticas 1</option>
+        <option>···</option>
+      </select><br />
+      <label for="semestre">Semestre</label><br />
+      <input type="text" name="semestre" #semestre="ngModel" [(ngModel)]="this.form.examen_de_suficiencia.semester"
+        placeholder="Ej: II-2015">
+    </div>
+  </div>
+
+  <div><button name="click" (click)="register()">Guardar</button></div>
+
+  <div *ngIf="err1">
+    <div class="alert info">
+      <span class="closebtn" onclick="this.parentElement.style.display='none'; this.err1=false">&times;</span>
+      No se pueden añadir más formularios de Materia Incompleta para este estudiante.
+    </div>
+  </div>
+  <div *ngIf="err2">
+    <div class="alert info">
+      <span class="closebtn" onclick="this.parentElement.style.display='none'; this.err2=false">&times;</span>
+      No se pueden añadir más formularios de Examen de Suficiencia para este estudiante.
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="!_logger.isLoged()">
+  <h1>No tienes permisos para acceder a esta página.</h1>
+</div>

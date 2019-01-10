@@ -36,13 +36,13 @@
         <td>
           <h4>Estado:</h4>
         </td>
-        <td>{{form.status}}</td>
+        <td>{{form.status ? 'Finalizado' : 'Pendiente'}}</td>
       </tr>
       <tr>
         <td>
           <h4>Respaldo:</h4>
         </td>
-        <td *ngIf="form.digital"><a>ver</a></td>
+        <td *ngIf="form.digital"><a>VER</a></td>
         <td *ngIf="!form.digital"><a>No disponible</a></td>
       </tr>
     </table>
