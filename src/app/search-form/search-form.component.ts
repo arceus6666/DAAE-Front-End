@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RestapiService } from '../services/restapi.service';
 import { HttpParams } from '@angular/common/http';
 import { LoggerService } from '../services/logger.service';
+import { StuffManagerService } from '../services/stuff-manager.service';
 
 @Component({
   selector: 'app-search-form',
@@ -20,6 +21,7 @@ export class SearchFormComponent implements OnInit {
   constructor(
     private _public: RestapiService,
     public _logger: LoggerService,
+    public _stuffManager: StuffManagerService,
     public _router: Router
   ) { }
 
