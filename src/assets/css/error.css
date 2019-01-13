@@ -66,8 +66,6 @@ html {
   animation: glitch-anim-1 2s infinite linear alternate-reverse;
   width: 21rem;
 }
-.errorPageRap .holoContainer > img:nth-child(3) {
-}
 .errorPageRap .holoPad {
   position: absolute;
   bottom: -15rem;

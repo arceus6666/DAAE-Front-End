@@ -9,8 +9,8 @@ import { RestapiService } from '../services/restapi.service';
 })
 export class ViewFormComponent implements OnInit {
 
-  private id: string;
-  private form: any;
+  public id: string;
+  public form: any;
 
   constructor(
     private _restapi: RestapiService,
@@ -28,7 +28,7 @@ export class ViewFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  private getCareer(id: string): string {
+  public getCareer(id: string): string {
     switch (id) {
       case 'admin':
         return 'Administración de Empresas';
@@ -65,7 +65,7 @@ export class ViewFormComponent implements OnInit {
     }
   }
 
-  private getType(t: string): string {
+  public getType(t: string): string {
     switch (t) {
       case 'altasBajas':
         return 'Altas y Bajas';

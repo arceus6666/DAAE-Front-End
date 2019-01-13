@@ -11,16 +11,16 @@ import { StuffManagerService } from '../services/stuff-manager.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private codem: number;
-  private passwordm: string;
-  private err: boolean;
-  private remember: boolean;
+  public codem: number;
+  public passwordm: string;
+  public err: boolean;
+  public remember: boolean;
 
   constructor(
-    private _service: RestapiService,
-    private _logger: LoggerService,
-    private _stuffManager: StuffManagerService,
-    private _router: Router
+    private _restapi: RestapiService,
+    public _logger: LoggerService,
+    public _stuffManager: StuffManagerService,
+    public _router: Router
   ) {
     this.err = false;
     this.remember = false;
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       .set('code', this.codem.toString())
       .set('password', this.passwordm);
 
-    this._service.getGlobal(
+    this._restapi.getGlobal(
       ['users', 'login'],
       params
     ).subscribe(data => {

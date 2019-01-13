@@ -12,9 +12,9 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 export class AppComponent {
   title = 'app';
   constructor(
-    private _logger: LoggerService,
-    private _stuffManager: StuffManagerService,
-    private _service: RestapiService
+    public _logger: LoggerService,
+    public _stuffManager: StuffManagerService,
+    public _service: RestapiService
   ) {
 
   }

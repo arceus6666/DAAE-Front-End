@@ -10,17 +10,17 @@ import { LoggerService } from '../services/logger.service';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  private ftype: any;
-  private fstate: any;
-  private fcareer: any;
-  private fdate: Date;
+  public ftype: string;
+  public fstate: string;
+  public fcareer: string;
+  public fdate: Date;
 
-  private forms: any;
+  public forms: any;
 
   constructor(
-    public _service: RestapiService,
+    private _public: RestapiService,
     public _logger: LoggerService,
-    private _router: Router
+    public _router: Router
   ) { }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class SearchFormComponent implements OnInit {
       .set('fcareer', this.fcareer)
       .set('fdate', this.fdate + '');
 
-    this._service.getGlobal(['forms', 'search'], params).subscribe(data => {
+    this._public.getGlobal(['forms', 'search'], params).subscribe(data => {
       let mdata: any = data;
       this.forms = mdata.msg;
     }, err => {
@@ -41,7 +41,7 @@ export class SearchFormComponent implements OnInit {
     })
   }
 
-  getCareer(id: string) {
+  public getCareer(id: string) {
     switch (id) {
       case 'admin':
         return 'Administración de Empresas';
@@ -78,7 +78,7 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  private getType(t: string): string {
+  public getType(t: string): string {
     switch (t) {
       case 'altasBajas':
         return 'Altas y Bajas';

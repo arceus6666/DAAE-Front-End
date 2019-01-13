@@ -13,20 +13,21 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class InsertFormComponent implements OnInit {
 
-  private form: any;
-  private err1: boolean;
-  private err2: boolean;
-  private f: FormGroup;
-  private ftype;
-  private imageString: string;
+  public form: any;
+  public err1: boolean;
+  public err2: boolean;
+  public f: FormGroup;
+  public ftype;
+  public imageString: string;
+  public image: boolean;
 
   constructor(
-    public _restapi: RestapiService,
+    private _restapi: RestapiService,
     public _logger: LoggerService,
     public _stuffManager: StuffManagerService,
     private _router: Router,
-    private _builder: FormBuilder,
-    private _cleaner: DomSanitizer
+    public _builder: FormBuilder,
+    public _cleaner: DomSanitizer
   ) {
     this.form = { examen_de_suficiencia: false, materia_incompleta: false };
     this.err1 = false;
@@ -35,12 +36,14 @@ export class InsertFormComponent implements OnInit {
       name: ['image', Validators.required],
       file: null
     });
+    this.image = false;
   }
 
   ngOnInit() {
   }
 
   onFileChange(event) {
+    this.image = true;
     let reader = new FileReader();
     if (event.target.files && event.target.files.length > 0) {
       let file = event.target.files[0];
@@ -57,17 +60,19 @@ export class InsertFormComponent implements OnInit {
   }
 
   register() {
-    this.imageString = 'data:image/png;base64, ' + this.f.value.file.value;
-    this.form.digital = {
-      obj: { value: this.f.value, ftype: this.ftype },
-      is: true
-    };
     if (this.form.category === 'materiaIncompleta') {
       this.form.materia_incompleta.is = true;
     }
     if (this.form.category === 'examenSuficiencia') {
       this.form.examen_de_suficiencia.is = true;
     }
+    if (this.image) {
+      this.form.digital = {
+        obj: { value: this.f.value, ftype: this.ftype },
+        is: true
+      };
+    }
+
     this._restapi.getGlobal(['forms', 'student-code', this.form.student_code]).subscribe(data => {
       let mdata: any = data;
       let q = 0;
@@ -79,10 +84,10 @@ export class InsertFormComponent implements OnInit {
         }
         if (q < 3) {
           this._restapi.postGlobal(['forms', 'register'], this.form).subscribe(data => {
-
+            this._router.navigate(['search-form']);
           }, err => {
             console.log(err)
-          })
+          });
         }
       }
       if (this.form.category === 'examenSuficiencia') {
@@ -93,10 +98,10 @@ export class InsertFormComponent implements OnInit {
         }
         if (q < 11) {
           this._restapi.postGlobal(['forms', 'register'], this.form).subscribe(data => {
-
+            this._router.navigate(['search-form']);
           }, err => {
             console.log(err)
-          })
+          });
         }
       }
     }, err => {

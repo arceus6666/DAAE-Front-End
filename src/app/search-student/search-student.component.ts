@@ -12,19 +12,19 @@ export class SearchStudentComponent implements OnInit {
 
   public code_var: number;
 
-  private student: any;
+  public student: any;
 
   constructor(
-    private _service: RestapiService,
-    private _logger: LoggerService,
-    private _router: Router
+    private _restapi: RestapiService,
+    public _logger: LoggerService,
+    public _router: Router
   ) { }
 
   ngOnInit() {
   }
 
   getStudent(): void {
-    this._service.getGlobal(['students', 'code', this.code_var.toString()]).subscribe(data => {
+    this._restapi.getGlobal(['students', 'code', this.code_var.toString()]).subscribe(data => {
       let mdata: any = data;
       this.student = mdata.msg;
     }, err => {
@@ -32,7 +32,7 @@ export class SearchStudentComponent implements OnInit {
     });
   }
 
-  private getCareer(id: string): string {
+  public getCareer(id: string): string {
     switch (id) {
       case 'admin':
         return 'Administración de Empresas';
@@ -69,7 +69,7 @@ export class SearchStudentComponent implements OnInit {
     }
   }
 
-  private getType(t: string): string {
+  public getType(t: string): string {
     switch (t) {
       case 'altasBajas':
         return 'Altas y Bajas';
