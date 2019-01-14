@@ -9,6 +9,7 @@ export class RestapiService {
   private backend_url: string
 
   constructor(private _http: HttpClient) {
+    // change this to http://skynet.lp.upb.edu:7890 when on build
     this.backend_url = 'http://localhost:7890'
   }
 
@@ -17,7 +18,6 @@ export class RestapiService {
     params?: HttpParams,
     headers?: HttpHeaders
   ): Observable<Object> {
-    // console.log(this.backend_url + urlMethod)
     let url = '';
 
     for (let m in urlMethod) {
