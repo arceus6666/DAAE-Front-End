@@ -2,24 +2,23 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="row">
-  <div class="column middle" style="background-color:#bbb;">
+<div class="row" style="background-image: url('../assets/res/background1.png');">
+  <div class="column middle">
     <div class="header">
       <div class="floatleft">
-        <a id="logo-container" [routerLink]="['']" class="brand-logo"><img src="../assets/res/logo.png"></a>
+        <a id="logo-container" [routerLink]="['/home']" class="brand-logo"><img src="../assets/res/logo.png"></a>
       </div>
     </div>
     <nav class="navbar" role="navigation">
       <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
       <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']" [routerLinkActive]="['red']">Login</a>
-      <a *ngIf="_logger.isLoged()" [routerLink]="['/logout']">Logout</a>
+      <a *ngIf="_logger.isLoged()" [routerLink]="['/home']" (click)="this._logger.logOut();">Logout</a>
       <div class="subnav">
         <button *ngIf="_logger.isLoged()" class="subnavbtn">Estudiante <i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
           <a [routerLink]="['/search-student']">Buscar Estudiante</a>
         </div>
       </div>
-
       <div class="subnav">
         <button *ngIf="_logger.isLoged()" class="subnavbtn">Formularios <i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
@@ -28,16 +27,18 @@
         </div>
       </div>
     </nav>
-
     <router-outlet></router-outlet>
     <br><br>
     <div class="footer">
-      <p>Sistema de gestión de registro y bienestar estudiantil<br>
+      <p>Sistema de gestión de registro y bienestar estudiantil<br />
         Práctica interna - 2018</p>
     </div>
   </div>
 
-  <div class="column side" style="background-color:#ccc;">
-    Column
+  <div class="column side">
+    <div class="header" style="text-align: center;">
+      Registro
+    </div>
+    <app-registry></app-registry>
   </div>
 </div>

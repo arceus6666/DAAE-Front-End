@@ -3,7 +3,6 @@ import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from "./home/home.component";
 import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
@@ -21,7 +20,6 @@ const appRoutes: Routes = [
   { path: 'insert-form', component: InsertFormComponent },
   { path: 'admin-config', component: AdminConfigComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent },
   { path: '**', component: ErrorComponent }
 ]
 

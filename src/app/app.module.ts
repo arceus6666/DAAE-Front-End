@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
-import { LogoutComponent } from './logout/logout.component';
 import { RestapiService } from './services/restapi.service';
 import { LoggerService } from './services/logger.service';
 import { appRoutingProviders, routing } from './app.routing';
@@ -19,6 +18,7 @@ import { ViewFormComponent } from './view-form/view-form.component';
 import { AdminConfigComponent } from './admin-config/admin-config.component';
 import { InsertFormComponent } from './insert-form/insert-form.component';
 import { InsertStudentComponent } from './insert-student/insert-student.component';
+import { RegistryComponent } from './registry/registry.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,6 @@ import { InsertStudentComponent } from './insert-student/insert-student.componen
     HomeComponent,
     LoginComponent,
     ErrorComponent,
-    LogoutComponent,
     ProfileComponent,
     SearchFormComponent,
     SearchStudentComponent,
@@ -34,7 +33,8 @@ import { InsertStudentComponent } from './insert-student/insert-student.componen
     ViewFormComponent,
     AdminConfigComponent,
     InsertFormComponent,
-    InsertStudentComponent
+    InsertStudentComponent,
+    RegistryComponent
   ],
   imports: [
     BrowserModule,

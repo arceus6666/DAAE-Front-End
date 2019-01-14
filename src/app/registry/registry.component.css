@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr{
+  border-width: 0;
+}
+
+th.user {
+  background-color: darkblue;
+  color: #f4b400;
+  text-align: left;
+}
+
+td.content {
+  background-color: #f4b400;
+  color: darkblue;
+}

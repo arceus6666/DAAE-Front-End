@@ -1,0 +1,15 @@
+<div *ngIf="this._logger.isLoged()">
+  <div *ngIf="this.registries.length === this.users.length;">
+    <table *ngFor="let r of registries; let i = index">
+      <tr>
+        <th class="user">Usuario: {{this.users[i].name.firstName[0]}}. {{this.users[i].name.firstSurname}}</th>
+      </tr>
+      <tr>
+        <td class="content">En: {{r.date | date}}</td>
+      </tr>
+      <tr>
+        <td class="content">Hizo: {{r.message}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
