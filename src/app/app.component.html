@@ -31,10 +31,15 @@
   </div>
 
   <div class="column side">
-    <div class="header" style="text-align: center;">
-      Registro
+    <div *ngIf="_logger.isLoged()">
+      <div class="header" style="text-align: center;">
+        Registro
+      </div>
+      <app-registry></app-registry>
     </div>
-    <app-registry></app-registry>
+    <div *ngIf="!_logger.isLoged()">
+      <!--aqui no disponible-->
+    </div>
   </div>
 
 </div>

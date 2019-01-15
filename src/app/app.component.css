@@ -15,8 +15,8 @@ body {
 
 .footer {
   height: 7vh;
-  background-color: black;
-  color: white;
+  background-color: darkblue;
+  color: #f4b400;
   text-align: center;
   vertical-align: bottom;
 }
