@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  n =  new Date();
+  y = this.n.getFullYear();
+  m = this.n.getMonth() + 1;
+  d = this.n.getDate();
+  mydate = this.d + '/' + this.m + '/' + this.y;
 
   constructor() { }
 
