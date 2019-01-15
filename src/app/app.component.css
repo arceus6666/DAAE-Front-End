@@ -35,7 +35,7 @@ body {
 .column {
   float: left;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  height: 100%;
 }
 
 /* Left and right column */
@@ -49,9 +49,11 @@ body {
 /* Middle column */
 .column.middle {
   width: 75%;
-  height: 100%;
+  height: inherit;
   padding: 0;
   border: 0;
+  background-image: url('../assets/res/background1.png');
+  background-repeat: repeat;
 }
 
 /* Clear floats after the columns */
