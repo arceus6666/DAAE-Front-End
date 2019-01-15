@@ -1,4 +1,4 @@
-import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { RouterModule, Routes, CanActivate, Route } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
@@ -16,7 +16,8 @@ import { InitPageComponent } from './init-page/init-page.component';
 const appRoutes: Routes = [
   {
     path: '', component: InitPageComponent, canActivateChild: [GuardianGuard], children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      //{ path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', component: HomeComponent },
       { path: 'daae', component: HomeComponent },
       { path: 'profile', component: ProfileComponent, canActivate: [GuardianGuard] },
       { path: 'search-form', component: SearchFormComponent },

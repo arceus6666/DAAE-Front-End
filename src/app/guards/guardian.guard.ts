@@ -22,7 +22,7 @@ export class GuardianGuard implements CanActivate, CanActivateChild {
     } else {
       this._router.navigate(['forbidden']);
     }
-
+    
   }
   canActivateChild(
     next: ActivatedRouteSnapshot,
