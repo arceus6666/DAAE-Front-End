@@ -9,7 +9,7 @@ Supervisor
 Intern
 Outsider
 ```
-hola
+
 ### Search-form 
 
 ##### formtype values
@@ -54,6 +54,5 @@ Ingeniería Financiera: financiera,
 Ingeniería Industrial y de Sistemas: industrial,
 Ingeniería Petrolera: petrolera,
 Ingeniería de Producción: produccion,
-Marketing y Logística: mkt,
-Psicología Organizacional: psy
+Marketing y Logística: mkt
 ```
