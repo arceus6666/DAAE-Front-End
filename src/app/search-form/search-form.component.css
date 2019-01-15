@@ -1,3 +1,11 @@
+.mydiv {
+  background-color: white;
+  margin: 5%;
+  border-style: groove;
+  border-color: #0D47A1;
+  border-radius: 5px;
+}
+
 input[type="text"],
 select {
   width: 15%;
