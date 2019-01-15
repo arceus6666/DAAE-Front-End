@@ -15,7 +15,8 @@ body {
 }
 
 .footer {
-  height: 7vh;
+  height: 10vh;
+  padding-top: 2vh;
   background-color: darkblue;
   color: #f4b400;
   text-align: center;
@@ -23,7 +24,7 @@ body {
 }
 
 .row {
-  height: 93vh;
+  height: 90vh;
 }
 
 /* Create three unequal columns that floats next to each other */

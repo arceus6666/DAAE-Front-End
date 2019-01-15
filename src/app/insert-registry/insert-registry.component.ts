@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestapiService } from '../services/restapi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-insert-registry',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsertRegistryComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _restapi: RestapiService,
+    private _router: Router
+  ) {
+    
+  }
 
   ngOnInit() {
   }
