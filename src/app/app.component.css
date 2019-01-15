@@ -53,7 +53,9 @@ body {
   padding: 0;
   border: 0;
   background-image: url('../assets/res/background1.png');
-  background-repeat: repeat;
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-attachment: scroll;
 }
 
 /* Clear floats after the columns */
