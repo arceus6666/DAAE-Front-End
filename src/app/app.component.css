@@ -9,7 +9,8 @@ body {
 /* Style the header */
 .header {
   font-size: 35px;
-  height: 16%;
+  text-align: center;
+  height: 15vh;
   background-color: white;
 }
 
