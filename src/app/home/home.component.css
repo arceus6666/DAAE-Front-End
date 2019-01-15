@@ -6,5 +6,8 @@
   border-radius: 5px;
   padding: 20px;
   width: 50%;
-
+  background-image: url("../../assets/res/icon.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 7%;
 }
