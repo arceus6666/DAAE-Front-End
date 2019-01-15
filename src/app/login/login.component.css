@@ -6,6 +6,10 @@
   margin: 0 auto;
   width: 400px;
   background-color: white;
+  background-image: url('../../assets/res/icon.png');
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+  background-position-x: 50%;
 }
 
 .alert {
