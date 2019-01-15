@@ -19,7 +19,7 @@ export class GuardianGuard implements CanActivate, CanActivateChild {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this._logger.isLoged()) {
+    if (this._logger.isLoged() || this._stuffManager.getItem('token')) {
       return true;
     } else {
       this._router.navigate(['forbidden']);
@@ -28,7 +28,7 @@ export class GuardianGuard implements CanActivate, CanActivateChild {
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this._logger.isLoged()) {
+    if (this._logger.isLoged() || this._stuffManager.getItem('token')) {
       return true;
     } else {
       this._router.navigate(['forbidden']);
