@@ -55,7 +55,7 @@ body {
   background-image: url('../assets/res/background1.png');
   background-size: cover;
   background-repeat: repeat-y;
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 /* Clear floats after the columns */
