@@ -13,7 +13,6 @@ import { appRoutingProviders, routing } from './app.routing';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
-import { AddFormComponent } from './add-form/add-form.component';
 import { ViewFormComponent } from './view-form/view-form.component';
 import { AdminConfigComponent } from './admin-config/admin-config.component';
 import { InsertFormComponent } from './insert-form/insert-form.component';
@@ -32,7 +31,6 @@ import { InitPageComponent } from './init-page/init-page.component';
     ProfileComponent,
     SearchFormComponent,
     SearchStudentComponent,
-    AddFormComponent,
     ViewFormComponent,
     AdminConfigComponent,
     InsertFormComponent,

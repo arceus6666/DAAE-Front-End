@@ -12,7 +12,6 @@ import { InsertFormComponent } from './insert-form/insert-form.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { GuardianGuard } from './guards/guardian.guard';
 import { InitPageComponent } from './init-page/init-page.component';
-import { AddFormComponent } from './add-form/add-form.component';
 
 const appRoutes: Routes = [
   {
@@ -24,8 +23,7 @@ const appRoutes: Routes = [
       { path: 'search-student', component: SearchStudentComponent },
       { path: 'view-form/:id', component: ViewFormComponent },
       { path: 'insert-form', component: InsertFormComponent },
-      { path: 'admin-config', component: AdminConfigComponent },
-      { path: 'add-form', component: AddFormComponent }
+      { path: 'admin-config', component: AdminConfigComponent }
     ]
   },
   { path: 'home', component: HomeComponent },
