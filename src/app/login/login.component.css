@@ -1,8 +1,11 @@
 .divi {
   border-radius: 5px;
-  padding: 50px;
+  border-style: groove;
+  border-color: #0D47A1;
+  padding: 20px;
   margin: 0 auto;
   width: 400px;
+  background-color: white;
 }
 
 .alert {
@@ -30,7 +33,6 @@
   display: inline-block;
   vertical-align: top;
   text-align: left;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   padding: 15px;
   height: 50%;
   margin: 10px;
@@ -87,7 +89,7 @@ input[type="password"] {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

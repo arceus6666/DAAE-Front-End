@@ -1,0 +1,19 @@
+.mydiv {
+  margin: 0 auto;
+  padding-left: 20%;
+  padding-top: 7%;
+}
+
+.mydiv2 {
+  padding-left: 100px;
+}
+
+img {
+  float: left;
+  width: 15%;
+  height: 15%;
+}
+
+h2{
+  font-family: "Data Control";
+}
