@@ -11,8 +11,8 @@
       <label>Password:</label>
       <input type="password" name="pass1" #pass1="ngModel" [(ngModel)]="passwordm" required>
       <br>
-      <div>
-        <div class="control-group">
+
+        <div class="control-group" style="float: right">
           <label class="container">Recuérdame
             <input type="checkbox" (click)="check()">
             <span class="checkmark"></span>
@@ -20,7 +20,7 @@
         </div>
         <br>
           <input class="button" type="submit" value="Login" [disabled]="!formUser.form.valid" />
-      </div>
+
       <div *ngIf="err">
         <div class="alert info">
           <span class="closebtn" onclick="this.parentElement.style.display='none'; this.err=false">&times;</span>
