@@ -12,6 +12,8 @@ import { InsertFormComponent } from './insert-form/insert-form.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { GuardianGuard } from './guards/guardian.guard';
 import { InitPageComponent } from './init-page/init-page.component';
+import {InsertStudentComponent} from './insert-student/insert-student.component';
+import {EditStudentComponent} from './edit-student/edit-student.component';
 
 const appRoutes: Routes = [
   {
@@ -30,6 +32,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forbidden', component: ForbiddenComponent },
+  { path: 'insert-student', component: InsertStudentComponent },
+  { path: 'edit-student', component: EditStudentComponent },
   { path: '**', component: ErrorComponent }
 ];
 

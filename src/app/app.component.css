@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom:50px;
 }
 
 /* Style the header */
@@ -15,12 +16,15 @@ body {
 }
 
 .footer {
-  height: 10vh;
-  padding-top: 2vh;
+  position: fixed;
+  height: 50px;
   background-color: darkblue;
   color: #f4b400;
   text-align: center;
-  vertical-align: bottom;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
 }
 
 .row {

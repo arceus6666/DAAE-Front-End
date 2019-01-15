@@ -22,6 +22,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { GuardianGuard } from './guards/guardian.guard';
 import { InitPageComponent } from './init-page/init-page.component';
 import { InsertRegistryComponent } from './insert-registry/insert-registry.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { InsertRegistryComponent } from './insert-registry/insert-registry.compo
     RegistryComponent,
     ForbiddenComponent,
     InitPageComponent,
-    InsertRegistryComponent
+    InsertRegistryComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,
