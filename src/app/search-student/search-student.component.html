@@ -1,6 +1,6 @@
-<div *ngIf="_logger.isLoged()">
+<div *ngIf="_logger.isLoged()" style="background: transparent;">
   <div>
-    <div class="control-group" style="width:50%;">
+    <div class="control-group">
       <label for="fname" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; font-size: 150%">Código
       </label>
       <input type="number" name="stdcode" #stdcode="ngModel" [(ngModel)]="code_var" placeholder="Ej.: 20202">
