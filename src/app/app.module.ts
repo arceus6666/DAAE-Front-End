@@ -19,6 +19,9 @@ import { AdminConfigComponent } from './admin-config/admin-config.component';
 import { InsertFormComponent } from './insert-form/insert-form.component';
 import { InsertStudentComponent } from './insert-student/insert-student.component';
 import { RegistryComponent } from './registry/registry.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { GuardianGuard } from './guards/guardian.guard';
+import { InitPageComponent } from './init-page/init-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { RegistryComponent } from './registry/registry.component';
     AdminConfigComponent,
     InsertFormComponent,
     InsertStudentComponent,
-    RegistryComponent
+    RegistryComponent,
+    ForbiddenComponent,
+    InitPageComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { RegistryComponent } from './registry/registry.component';
   providers: [
     RestapiService,
     LoggerService,
+    GuardianGuard,
     appRoutingProviders
   ],
   bootstrap: [AppComponent]
