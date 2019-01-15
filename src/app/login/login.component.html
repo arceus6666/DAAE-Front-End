@@ -7,19 +7,19 @@
       <label>Código:</label>
       <input type="number" name="code" #code="ngModel" [(ngModel)]="codem" required pattern="[0-9]+">
       <span *ngIf="code.touched && !code.valid">El código debe ser solo numérico.<br></span>
-      <br>
-      <label>Password:</label>
+      <br />
+      <label>Contrseña:</label>
       <input type="password" name="pass1" #pass1="ngModel" [(ngModel)]="passwordm" required>
-      <br>
-
-        <div class="control-group" style="float: right">
-          <label class="container">Recuérdame
+      <br />
+      <div class="control-group" style="float: right">
+        <label class="container">
+          <div style="padding-top: 5px;">Mantener sesión
             <input type="checkbox" (click)="check()">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <br>
-          <input class="button" type="submit" value="Login" [disabled]="!formUser.form.valid" />
+            <span class="checkmark"></span></div>
+        </label>
+      </div>
+      <br />
+      <input class="button" type="submit" value="Login" [disabled]="!formUser.form.valid" />
 
       <div *ngIf="err">
         <div class="alert info">
