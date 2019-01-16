@@ -1,11 +1,11 @@
 .mydiv {
-  background-color: white;
-  margin: auto auto;
+  border-radius: 5px;
   border-style: groove;
   border-color: #0D47A1;
-  border-radius: 5px;
   padding: 20px;
+  margin: auto auto;
   width: 50%;
+  background-color: white;
   background-image: url("../../assets/res/icon.png");
   background-repeat: no-repeat;
   background-position-x: 95%;
