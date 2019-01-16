@@ -10,9 +10,8 @@
       </div>
     </div>
     <nav class="navbar" role="navigation">
-      <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']" [routerLinkActive]="['red']">Mi perfil</a>
-      <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']" [routerLinkActive]="['red']">Login</a>
-      <a *ngIf="_logger.isLoged()" [routerLink]="['/home']" (click)="this._logger.logOut();">Logout</a>
+      <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']">Mi perfil</a>
+      <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']">Login</a>
       <div class="subnav">
         <button *ngIf="_logger.isLoged()" class="subnavbtn">Estudiante <i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
@@ -26,6 +25,8 @@
           <a [routerLink]="['/insert-form']">Añadir Formulario</a>
         </div>
       </div>
+      <a *ngIf="_logger.isLoged()" [routerLink]="['/insert-registry']">Añadir Registro</a>
+      <a *ngIf="_logger.isLoged()" [routerLink]="['/home']" (click)="reg();this._logger.logOut();">Logout</a>
     </nav>
     <router-outlet></router-outlet>
   </div>

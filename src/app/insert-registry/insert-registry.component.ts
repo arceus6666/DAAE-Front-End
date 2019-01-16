@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestapiService } from '../services/restapi.service';
 import { Router } from '@angular/router';
+import { LoggerService } from '../services/logger.service';
 
 @Component({
   selector: 'app-insert-registry',
@@ -9,14 +10,25 @@ import { Router } from '@angular/router';
 })
 export class InsertRegistryComponent implements OnInit {
 
+  public msg: string;
+  public show: boolean;
   constructor(
     private _restapi: RestapiService,
+    private _logger: LoggerService,
     private _router: Router
   ) {
-    
+    this.show = false;
   }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this._restapi.postRegistry(this._logger.getID(), '').subscribe(data => {
+      this.show = true;
+    }, err => {
+      console.log(err)
+    });
   }
 
 }

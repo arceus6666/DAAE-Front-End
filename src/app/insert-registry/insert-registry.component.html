@@ -1,3 +1,14 @@
-<p>
-  insert-registry works!
-</p>
+<div class="divi">
+  <form #formRegistry="ngForm" (ngSubmit)="onSubmit(); formRegistry.reset();">
+    <label>Mensaje:</label>
+    <input type="text" name="message" #message="ngModel" [(ngModel)]="msg" required>
+    <br />
+    <input class="button" type="submit" value="Registrar" [disabled]="!formRegistry.form.valid" />
+  </form>
+  <div *ngIf="show">
+    <div class="alert info">
+      <span class="closebtn" onclick="this.parentElement.style.display='none'; this.show=false">&times;</span>
+      Tarea Registrada!
+    </div>
+  </div>
+</div>

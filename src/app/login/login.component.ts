@@ -43,14 +43,25 @@ export class LoginComponent implements OnInit {
       // console.log(data)
       mdata = data;
       this._logger.logIn(mdata.msg._id, mdata.msg.role, mdata.token);
-      console.log(this.remember)
       if (this.remember) {
         this._stuffManager.storeItem('token', mdata.token);
       }
+      this._restapi.postRegistry(mdata.msg._id, 'Login').subscribe(data => {
+
+      }, error => {
+        console.log(error)
+        this.err = true;
+      })
       this._router.navigate(['home']);
     }, error => {
       console.log(error)
       this.err = true;
+      this._restapi.postRegistry(mdata.msg._id, 'Login').subscribe(data => {
+
+      }, error => {
+        console.log(error)
+        this.err = true;
+      })
     });
   }
 

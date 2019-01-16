@@ -45,7 +45,8 @@
         <td>{{getCareer(f.career)}}</td>
         <td>{{getType(f.category)}}</td>
         <td>{{f.status ? 'Finalizado' : 'Pendiente'}}</td>
-        <td><a>{{f.digital.have ? 'Disponible' : 'No disponible'}}</a></td>
+        <td *ngIf="f.digital.have"><a [routerLink]="['/view-image/'+f._id]">Disponible</a></td>
+        <td *ngIf="!f.digital.have">No disponible</td>
         <td><a [routerLink]="['/view-form/'+f._id]" style="text-decoration:none;"><i class="fas fa-search"></i></a></td>
       </tr>
     </table>

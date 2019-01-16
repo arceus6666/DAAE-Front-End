@@ -17,16 +17,20 @@ export class SearchStudentComponent implements OnInit {
   constructor(
     private _restapi: RestapiService,
     public _logger: LoggerService,
-    public _router: Router
+    private _router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  getStudent(): void {
+  public getStudent(): void {
     this._restapi.getGlobal(['students', 'code', this.code_var.toString()]).subscribe(data => {
       let mdata: any = data;
       this.student = mdata.msg;
+      this._restapi.postRegistry(this._logger.getID(), 'Búsqueda de estudiante').subscribe(data => {
+      }, err => {
+        console.log(err)
+      });
     }, err => {
       console.log(err)
     });

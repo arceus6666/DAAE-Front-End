@@ -91,4 +91,14 @@ export class RestapiService {
       headers: hs
     });
   }
+
+  public postRegistry<Object>(user: string, message: string) {
+    let valor = JSON.stringify({ user: user, message: message })
+    return this._http.post<Object>(
+      this.backend_url + '/regs/register',
+      valor,
+      {
+        headers: new HttpHeaders().set('Content-Type', 'application/json')
+      });
+  }
 }

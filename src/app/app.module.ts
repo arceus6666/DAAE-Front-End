@@ -23,6 +23,8 @@ import { GuardianGuard } from './guards/guardian.guard';
 import { InitPageComponent } from './init-page/init-page.component';
 import { InsertRegistryComponent } from './insert-registry/insert-registry.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { ViewImageComponent } from './view-image/view-image.component';
+import { CryptarcService } from './services/cryptarc.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     ForbiddenComponent,
     InitPageComponent,
     InsertRegistryComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    ViewImageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     RestapiService,
     LoggerService,
     GuardianGuard,
+    CryptarcService,
     appRoutingProviders
   ],
   bootstrap: [AppComponent]

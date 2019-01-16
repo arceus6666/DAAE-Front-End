@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestapiService } from '../services/restapi.service';
+import { LoggerService } from '../services/logger.service';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 @Component({
   selector: 'app-view-form',
@@ -14,12 +16,17 @@ export class ViewFormComponent implements OnInit {
 
   constructor(
     private _restapi: RestapiService,
+    private _logger: LoggerService,
     private _route: ActivatedRoute
   ) {
     this.id = this._route.snapshot.paramMap.get('id');
     this._restapi.getGlobal(['forms', 'get', this.id]).subscribe(data => {
       let mdata: any = data;
       this.form = mdata.msg;
+      this._restapi.postRegistry(this._logger.getID(), 'Revisión de formulario: ' + mdata.msg._id).subscribe(data => {
+      }, err => {
+        console.log(err)
+      });
     }, err => {
       console.log(err)
     })

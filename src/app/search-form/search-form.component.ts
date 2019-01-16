@@ -19,7 +19,7 @@ export class SearchFormComponent implements OnInit {
   public forms: any;
 
   constructor(
-    private _public: RestapiService,
+    private _restapi: RestapiService,
     public _logger: LoggerService,
     public _stuffManager: StuffManagerService,
     public _router: Router
@@ -35,9 +35,14 @@ export class SearchFormComponent implements OnInit {
       .set('fcareer', this.fcareer)
       .set('fdate', this.fdate + '');
 
-    this._public.getGlobal(['forms', 'search'], params).subscribe(data => {
+    this._restapi.getGlobal(['forms', 'search'], params).subscribe(data => {
       let mdata: any = data;
       this.forms = mdata.msg;
+      this._restapi.postRegistry(this._logger.getID(), 'Búsqueda de formulario').subscribe(data => {
+
+      }, err => {
+        console.log(err)
+      });
     }, err => {
       console.log(err)
     })

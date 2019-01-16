@@ -1,0 +1,77 @@
+.divi {
+  border-radius: 5px;
+  border-style: groove;
+  border-color: #0D47A1;
+  padding: 20px;
+  margin: 0 auto;
+  width: 400px;
+  background-color: white;
+  background-image: url('../../assets/res/icon.png');
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+  background-position-x: 50%;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.alert.info {
+  background-color: #2196f3;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.control-group {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding: 15px;
+  height: 50%;
+  margin: 10px;
+}
+
+input[type="text"]::-webkit-inner-spin-button,
+input[type="text"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.button {
+  background-color: darkblue;
+  border: transparent;
+  border-radius: 8px;
+  color: #f4b400;
+  padding: 7px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: cornflowerblue;
+}

@@ -22,10 +22,8 @@ export class RegistryComponent implements OnInit {
     this._restapi.getGlobal(['regs', 'all']).subscribe(data => {
       let mdata: any = data;
       this.registries = mdata.msg;
-      console.log(data)
       for (let r in mdata.msg) {
         this._restapi.getGlobal(['users', 'find', mdata.msg[r].user]).subscribe(data2 => {
-          console.log(data2)
           let mdata2: any = data2;
           this.users.push(mdata2.msg);
         }, err => {
