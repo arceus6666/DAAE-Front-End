@@ -10,6 +10,8 @@
   background-repeat: no-repeat;
   background-position-y: 40%;
   background-position-x: 50%;
+  position: relative;
+  top: 50px;
 }
 
 .alert {

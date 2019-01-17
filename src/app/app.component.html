@@ -2,13 +2,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="row">
-  <div class="column middle">
-    <div class="header">
-      <div class="floatleft">
-        <a id="logo-container" [routerLink]="['/home']" class="brand-logo"><img src="../assets/res/logo.png"></a>
-      </div>
-    </div>
+<div class="grid-container">
+  <div class="header">
+    <a id="logo-container" [routerLink]="['/home']" class="brand-logo"><img src="../assets/res/logo.png"></a>
     <nav class="navbar" role="navigation">
       <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']">Mi perfil</a>
       <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']">Login</a>
@@ -28,10 +24,11 @@
       <a *ngIf="_logger.isLoged()" [routerLink]="['/insert-registry']">Añadir Registro</a>
       <a *ngIf="_logger.isLoged()" [routerLink]="['/home']" (click)="reg();this._logger.logOut();">Logout</a>
     </nav>
+  </div>
+  <div class="left">
     <router-outlet></router-outlet>
   </div>
-
-  <div class="column side">
+  <div class="right">
     <div *ngIf="_logger.isLoged()">
       <div class="header" style="text-align: center;">
         Registro
@@ -42,9 +39,9 @@
       <!--aqui no disponible-->
     </div>
   </div>
+  <div class="footer">
+    Sistema de gestión de registro y bienestar estudiantil<br />
+    Práctica interna - 2019
+  </div>
+</div>
 
-</div>
-<div class="footer">
-  Sistema de gestión de registro y bienestar estudiantil<br />
-  Práctica interna - 2019
-</div>

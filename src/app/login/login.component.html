@@ -6,7 +6,7 @@
       <input type="number" name="code" #code="ngModel" [(ngModel)]="codem" required pattern="[0-9]+">
       <span *ngIf="code.touched && !code.valid">El código debe ser solo numérico.<br></span>
       <br />
-      <label>Contrseña:</label>
+      <label>Contraseña:</label>
       <input type="password" name="pass1" #pass1="ngModel" [(ngModel)]="passwordm" required>
       <br />
       <div class="control-group" style="float: right">
