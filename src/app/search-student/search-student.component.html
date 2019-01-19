@@ -12,95 +12,83 @@
   <div *ngIf="student">
     <table>
       <tr>
-        <th>
-          <span class="title">Nombre Completo: </span>
+        <th class="title" colspan="2">
+          Nombre Completo:
         </th>
-        <th>
-          <span class="content">{{student.name}}</span>
+        <th class="content" colspan="2">
+          {{student.name}}
         </th>
       </tr>
-      <div>
-        <tr>
-          <td class="title">
-            Carrera:<br />
-          </td>
-          <td class="content">
-            {{getCareer(student.career)}}<br />
-          </td>
-        </tr>
-        <tr>
-          <td class="title">
-            Ingreso:<br />
-          </td>
-          <td class="content">
-            {{student.entryDate ? (student.entryDate | date) : '-'}}<br />
-          </td>
-          <td class="title">
-          </td>
-          <td class="content">
-          </td>
-        </tr>
-        <tr>
-          <td class="title">
-            Colegio:<br />
-          </td>
-          <td class="content">
-            {{student.personalInfo.school.name ? student.personalInfo.school.name : '-'}}<br />
-          </td>
-          <td class="title">
-          </td>
-          <td class="content">
-          </td>
-        </tr>
-        <tr>
-          <td class="title">
-            Nacionalidad:<br />
-          </td>
-          <td class="content">
-            {{student.personalInfo.nationality ? student.personalInfo.nationality : '-'}}<br />
-          </td>
-          <td class="title">
-          </td>
-          <td class="content">
-          </td>
-        </tr>
-        <tr>
-          <td class="title">
-            CI:<br />
-          </td>
-          <td class="content">
-            {{student.personalInfo.ci ? student.personalInfo.ci : '-'}}<br />
-          </td>
-          <td class="title">
-          </td>
-          <td class="content">
-          </td>
-        </tr>
-      </div>
-      <div class="control-group title">
-        Teléfonos:<br />
-        Dirección:<br />
-        Fecha de nacimiento:<br />
-        Tutor:<br />
-        Teléfono de tutor:<br />
-      </div>
-      <div class="control-group ">
-        <div class="content">
-          {{2}}<br />
-        </div>
-        <div class="content">
+      <tr>
+        <td class="title">
+          Carrera:<br />
+        </td>
+        <td class="content">
+          {{getCareer(student.career)}}<br />
+        </td>
+        <td class="title">
+          Teléfonos:<br />
+        </td>
+        <td class="content">
+          (check phone numbers)<br />
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Ingreso:<br />
+        </td>
+        <td class="content">
+          {{student.entryDate ? (student.entryDate | date) : '-'}}<br />
+        </td>
+        <td class="title">
+          Dirección:<br />
+        </td>
+        <td class="content">
           {{student.personalInfo.address ? student.personalInfo.address : '-'}}<br />
-        </div>
-        <div class="content">
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Colegio:<br />
+        </td>
+        <td class="content">
+          {{student.personalInfo.school.name ? student.personalInfo.school.name : '-'}}<br />
+        </td>
+        <td class="title">
+          Fecha de nacimiento:<br />
+        </td>
+        <td class="content">
           {{student.personalInfo.birthDate ? (student.personalInfo.birthDate | date) : '-'}}<br />
-        </div>
-        <div class="content">
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          Nacionalidad:<br />
+        </td>
+        <td class="content">
+          {{student.personalInfo.nationality ? student.personalInfo.nationality : '-'}}<br />
+        </td>
+        <td class="title">
+          Tutor:<br />
+        </td>
+        <td class="content">
           {{student.tutor.name ? student.tutor.name : '-'}}<br />
-        </div>
-        <div class="content">
+        </td>
+      </tr>
+      <tr>
+        <td class="title">
+          CI:<br />
+        </td>
+        <td class="content">
+          {{student.personalInfo.ci ? student.personalInfo.ci : '-'}}<br />
+        </td>
+        <td class="title">
+          Teléfono de tutor:<br />
+        </td>
+        <td class="content">
           {{student.tutor.phoneNumber !== 0 ? student.tutor.phoneNumber : '-'}}<br />
-        </div>
-      </div>
+        </td>
+      </tr>
     </table>
 
     <div>
