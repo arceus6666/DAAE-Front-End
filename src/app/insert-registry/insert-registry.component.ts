@@ -24,7 +24,7 @@ export class InsertRegistryComponent implements OnInit {
   }
 
   onSubmit() {
-    this._restapi.postRegistry(this._logger.getID(), '').subscribe(data => {
+    this._restapi.postRegistry(this._logger.getID(), this.msg).subscribe(data => {
       this.show = true;
     }, err => {
       console.log(err)
