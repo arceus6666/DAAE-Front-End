@@ -29,11 +29,11 @@ const appRoutes: Routes = [
       { path: 'view-image/:id', component: ViewImageComponent },
       { path: 'insert-form', component: InsertFormComponent },
       { path: 'admin-config', component: AdminConfigComponent },
+      { path: 'insert-student', component: InsertStudentComponent },
       { path: 'insert-registry', component: InsertRegistryComponent },
       { path: 'edit-student', component: EditStudentComponent }
     ]
   },
-  { path: 'insert-student', component: InsertStudentComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

@@ -56,7 +56,10 @@ body {
 .right {
   overflow-y: auto;
   height: 100%;
-  grid-area: 1 / 2 / 3 / 2;
+  grid-area: 2 / 2 / 3 / 2;
+}
+.rightup{
+  grid-area: 1 / 2 / 1 / 2;
 }
 
 .active {
@@ -252,7 +255,7 @@ input[type="submit"]:hover {
   font-size: 16px;
   color: #f4b400;
   text-align: center;
-  padding: 14px 14px;
+  padding: 16px 16px;
   text-decoration: none;
 }
 
@@ -266,7 +269,7 @@ input[type="submit"]:hover {
   border: none;
   outline: none;
   color: #f4b400;
-  padding: 14px 16px;
+  padding: 15.5px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
