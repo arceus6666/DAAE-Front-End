@@ -5,26 +5,28 @@
 <div class="grid-container">
   <div class="header">
     <a id="logo-container" [routerLink]="['/home']" class="brand-logo"><img src="../assets/res/logo.png"></a>
-    <nav class="navbar" role="navigation">
-      <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']">Mi perfil</a>
-      <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']">Login</a>
-      <div class="subnav">
-        <button *ngIf="_logger.isLoged()" class="subnavbtn">Estudiante <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-          <a [routerLink]="['/search-student']">Buscar Estudiante</a>
-        </div>
-      </div>
-      <div class="subnav">
-        <button *ngIf="_logger.isLoged()" class="subnavbtn">Formularios <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-          <a [routerLink]="['/search-form']">Buscar Formularios</a>
-          <a [routerLink]="['/insert-form']">Añadir Formulario</a>
-        </div>
-      </div>
-      <a *ngIf="_logger.isLoged()" [routerLink]="['/insert-registry']">Añadir Registro</a>
-      <a *ngIf="_logger.isLoged()" [routerLink]="['/home']" (click)="reg();this._logger.logOut();">Logout</a>
-    </nav>
   </div>
+  <nav class="navbar" role="navigation">
+    <a *ngIf="_logger.isLoged()" [routerLink]="['/profile']">Mi perfil</a>
+    <a *ngIf="!_logger.isLoged()" [routerLink]="['/login']">Login</a>
+    <div class="subnav">
+      <button *ngIf="_logger.isLoged()" class="subnavbtn">Estudiante <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a [routerLink]="['/search-student']">Buscar Estudiante</a>
+        <a [routerLink]="['/insert-student']">Añadir Estudiante</a>
+        <a [routerLink]="['/edit-student']">Editar Estudiante</a>
+      </div>
+    </div>
+    <div class="subnav">
+      <button *ngIf="_logger.isLoged()" class="subnavbtn">Formularios <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a [routerLink]="['/search-form']">Buscar Formularios</a>
+        <a [routerLink]="['/insert-form']">Añadir Formulario</a>
+      </div>
+    </div>
+    <a *ngIf="_logger.isLoged()" [routerLink]="['/insert-registry']">Añadir Registro</a>
+    <a *ngIf="_logger.isLoged()" [routerLink]="['/home']" (click)="reg();this._logger.logOut();">Logout</a>
+  </nav>
   <div class="left">
     <router-outlet></router-outlet>
   </div>
