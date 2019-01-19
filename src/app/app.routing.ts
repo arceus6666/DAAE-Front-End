@@ -17,13 +17,20 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
 import { ViewImageComponent } from './view-image/view-image.component';
 import { InsertRegistryComponent } from './insert-registry/insert-registry.component';
 import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { AdminGuardGuard } from './guards/admin-guard.guard';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forbidden', component: ForbiddenComponent },
   {
     path: '', component: InitPageComponent, canActivateChild: [GuardianGuard], children: [
       //{ path: '', component: HomeComponent },
       { path: 'daae', component: HomeComponent },
-      { path: 'profile', component: ProfileComponent, canActivate: [GuardianGuard] },
+      { path: 'profile', component: ProfileComponent },
       { path: 'search-form', component: SearchFormComponent },
       { path: 'search-student', component: SearchStudentComponent },
       { path: 'view-form/:id', component: ViewFormComponent },
@@ -32,14 +39,15 @@ const appRoutes: Routes = [
       { path: 'admin-config', component: AdminConfigComponent },
       { path: 'insert-student', component: InsertStudentComponent },
       { path: 'insert-registry', component: InsertRegistryComponent },
-      { path: 'edit-student', component: EditStudentComponent },
+      { path: 'edit-student/:id', component: EditStudentComponent },
       { path: 'manage-accounts', component: ManageAccountsComponent }
     ]
   },
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'forbidden', component: ForbiddenComponent },
+  {
+    path: '', component: InitPageComponent, canActivateChild: [AdminGuardGuard], children: [
+      { path: 'edit-user/:id', component: EditUserComponent },
+    ]
+  },
   { path: '**', component: ErrorComponent }
 ];
 

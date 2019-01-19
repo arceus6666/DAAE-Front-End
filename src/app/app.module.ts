@@ -26,6 +26,9 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
 import { ViewImageComponent } from './view-image/view-image.component';
 import { CryptarcService } from './services/cryptarc.service';
 import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { AdminGuardGuard } from './guards/admin-guard.guard';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { ManageAccountsComponent } from './manage-accounts/manage-accounts.compo
     InsertRegistryComponent,
     EditStudentComponent,
     ViewImageComponent,
-    ManageAccountsComponent
+    ManageAccountsComponent,
+    EditUserComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,7 @@ import { ManageAccountsComponent } from './manage-accounts/manage-accounts.compo
     RestapiService,
     LoggerService,
     GuardianGuard,
+    AdminGuardGuard,
     CryptarcService,
     appRoutingProviders
   ],
