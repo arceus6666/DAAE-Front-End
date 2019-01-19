@@ -29,11 +29,13 @@
   <div class="left">
     <router-outlet></router-outlet>
   </div>
+  <div class="rightup" style="text-align: center;">
+    <h2 *ngIf="_logger.isLoged()">
+      Historial de Actividades
+    </h2>
+  </div>
   <div class="right">
     <div *ngIf="_logger.isLoged()">
-      <div class="rightup" style="text-align: center;">
-        Historial de Actividades
-      </div>
       <app-registry></app-registry>
     </div>
     <div *ngIf="!_logger.isLoged()">
