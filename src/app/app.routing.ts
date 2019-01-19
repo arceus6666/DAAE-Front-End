@@ -16,6 +16,7 @@ import { InsertStudentComponent } from './insert-student/insert-student.componen
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { ViewImageComponent } from './view-image/view-image.component';
 import { InsertRegistryComponent } from './insert-registry/insert-registry.component';
+import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 
 const appRoutes: Routes = [
   {
@@ -31,10 +32,11 @@ const appRoutes: Routes = [
       { path: 'admin-config', component: AdminConfigComponent },
       { path: 'insert-student', component: InsertStudentComponent },
       { path: 'insert-registry', component: InsertRegistryComponent },
-      { path: 'edit-student', component: EditStudentComponent }
+      { path: 'edit-student', component: EditStudentComponent },
+      { path: 'manage-accounts', component: ManageAccountsComponent }
     ]
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forbidden', component: ForbiddenComponent },

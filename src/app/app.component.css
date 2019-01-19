@@ -54,7 +54,6 @@ body {
 
 /* Style the right column */
 .right {
-  overflow-y: auto;
   height: 100%;
   grid-area: 2 / 2 / 3 / 2;
 }

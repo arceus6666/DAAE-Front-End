@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+<table>
+  <tr>
+    <th>
+      Nombre
+    </th>
+    <th>
+      Código
+    </th>
+    <th>
+    </th>
+  </tr>
+  <tr *ngFor="let u of users">
+    <td class="name">
+      {{u.name.firstName[0]}}. {{u.name.firstSurname}}
+    </td>
+    <td class="code">
+      {{u.code}}
+    </td>
+    <td class="icon">
+      <a [routerLink]="['/edit-user/' + u._id]" style="text-decoration:none;"><i class="fas fa-user-edit"></i></a>
+    </td>
+  </tr>
+</table>

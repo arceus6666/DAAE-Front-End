@@ -1,0 +1,42 @@
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #bbb;
+  text-align: center;
+}
+
+td {
+  background-color: white;
+  text-align: left;
+}
+
+
+tr td:last-child {
+  text-align: center;
+}
+
+tr th:last-child {
+  text-align: center;
+  background-color: unset;
+  border: unset;
+}
+
+.name {
+  width: 200px;
+}
+
+.code {
+  width: 100px;
+}
+
+.icon {
+  width: 2px;
+}

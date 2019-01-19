@@ -25,6 +25,7 @@ import { InsertRegistryComponent } from './insert-registry/insert-registry.compo
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { ViewImageComponent } from './view-image/view-image.component';
 import { CryptarcService } from './services/cryptarc.service';
+import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CryptarcService } from './services/cryptarc.service';
     InitPageComponent,
     InsertRegistryComponent,
     EditStudentComponent,
-    ViewImageComponent
+    ViewImageComponent,
+    ManageAccountsComponent
   ],
   imports: [
     BrowserModule,

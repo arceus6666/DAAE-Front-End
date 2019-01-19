@@ -24,6 +24,7 @@
       </div>
     </div>
     <a *ngIf="_logger.isLoged()" [routerLink]="['/insert-registry']">Añadir Registro</a>
+    <a *ngIf="_logger.isLoged()" [routerLink]="['/manage-accounts']">Administrar Cuentas</a>
     <a *ngIf="_logger.isLoged()" [routerLink]="['/home']" (click)="reg();this._logger.logOut();">Logout</a>
   </nav>
   <div class="left">
