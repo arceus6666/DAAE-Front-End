@@ -1,15 +1,17 @@
-<div *ngIf="_logger.isLoged()" style="background: transparent;">
-  <div>
-    <div class="control-group">
-      <label for="fname" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; font-size: 150%">Código
-      </label>
-      <input type="number" name="stdcode" #stdcode="ngModel" [(ngModel)]="code_var" placeholder="Ej.: 20202">
+<div *ngIf="!_logger.isLoged()" style="background: transparent;">
+  <div class="divi">
+    <h4 style="display: inline-block"><b>Código</b></h4>
+    <div class="control-group" style="display: inline-block">
+      <input style="margin-left: 20px;" type="number" name="stdcode" #stdcode="ngModel" [(ngModel)]="code_var" placeholder="Ej.: 20202">
     </div>
-    <div class="control-group">
-      <button name="click" (click)="getStudent()">Buscar</button>
+    <div class="control-group" style="display: inline-block; padding-left: 40px; padding-top: 12px;">
+      <button class="button" name="click" (click)="getStudent()">Buscar</button>
     </div>
   </div>
-  <div *ngIf="student">
+
+  <h2 *ngIf="student" style="padding-left: 10%; padding-top: 5px; display: inline-block;"><b>Resultados:</b></h2>
+
+  <div class="divi" *ngIf="student">
     <table>
       <tr>
         <th class="title" colspan="2">
@@ -92,9 +94,9 @@
     </table>
 
     <div>
-      <h3>Procesos:</h3>
+      <h3><b>Procesos:</b></h3>
       <ul>
-        <li>
+        <li class="divemp">
           <h4>Tipo de formulario:</h4>
           <h4>Fecha de ingreso:</h4>
           <h4>Estado:</h4>

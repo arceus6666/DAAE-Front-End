@@ -26,13 +26,14 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forbidden', component: ForbiddenComponent },
+  { path: 'search-student', component: SearchStudentComponent },
   {
     path: '', component: InitPageComponent, canActivateChild: [GuardianGuard], children: [
       //{ path: '', component: HomeComponent },
       { path: 'daae', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'search-form', component: SearchFormComponent },
-      { path: 'search-student', component: SearchStudentComponent },
+
       { path: 'view-form/:id', component: ViewFormComponent },
       { path: 'view-image/:id', component: ViewImageComponent },
       { path: 'insert-form', component: InsertFormComponent },
