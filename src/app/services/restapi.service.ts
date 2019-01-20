@@ -78,7 +78,6 @@ export class RestapiService {
   ) {
     let url = '';
     let hs = new HttpHeaders();
-    let valor = JSON.stringify(object);
 
     hs.set('Content-Type', 'application/json');
     if (token) hs.set('Authorization', token);
@@ -87,7 +86,7 @@ export class RestapiService {
       url += '/' + urlMethod[m];
     }
 
-    return this._http.put<Object>(this.backend_url + url, valor, {
+    return this._http.put<Object>(this.backend_url + url, object, {
       headers: hs
     });
   }

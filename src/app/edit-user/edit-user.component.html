@@ -1,3 +1,31 @@
-<p>
-  edit-user works!
-</p>
+<div *ngIf="us">
+  <label for="email">Email:</label><br />
+  <input name="email" type="text" #email="ngModel" [(ngModel)]="email_var"><br />
+  <label for="code">Código:</label><br />
+  <input name="code" type="number" #code="ngModel" [(ngModel)]="code_var"><br />
+  <div>
+    <label for="fn">Primer Nombre:</label><br />
+    <input name="fn" type="text" #fn="ngModel" [(ngModel)]="fn_var"><br />
+    <label for="sn">Segundo Nombre (opcional):</label><br />
+    <input name="sn" type="text" #sn="ngModel" [(ngModel)]="sn_vare"><br />
+    <label for="fs">Primer Apellido:</label><br />
+    <input name="fs" type="text" #fs="ngModel" [(ngModel)]="fs_var"><br />
+    <label for="ss">Segundo Apellido:</label><br />
+    <input name="ss" type="text" #ss="ngModel" [(ngModel)]="ss_var"><br />
+  </div>
+  <label for="pass1">Contraseña:</label><br />
+  <input name="pass1" type="password" #pass1="ngModel" [(ngModel)]="this.p1" required pattern="^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$"><br />
+  <span *ngIf="pass1.touched && !pass1.valid">La contraseña debe tener 8 caracteres mínimo, 1 mayúscula, 1 caracter
+    especial (!@#$&*), 1 número y 1 minúscula.<br /></span>
+  <label for="pass2">Repetir contraseña:</label><br />
+  <input name="pass2" type="password" #pass2="ngModel" [(ngModel)]="this.p2" required pattern="^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$"><br />
+  <span *ngIf="this.p1 !== this.p2">(Las contraseñas no coinciden.)<br /></span>
+  <label for="role">Rol:</label><br />
+  <select name="role" #role="ngModel" [(ngModel)]="role_var">
+    <option value="Administrator">Administrador</option>
+    <option value="Supervisor">Supervisor</option>
+    <option value="Intern">Interno</option>
+    <option value="Outsider">Espectador</option>
+  </select><br />
+  <input class="button" type="button" value="Guardar" [disabled]="this.p1 !== this.p2" (click)="onSubmit()"><br />
+</div>

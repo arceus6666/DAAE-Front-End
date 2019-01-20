@@ -56,12 +56,6 @@ export class LoginComponent implements OnInit {
     }, error => {
       console.log(error)
       this.err = true;
-      this._restapi.postRegistry(mdata.msg._id, 'Login').subscribe(data => {
-
-      }, error => {
-        console.log(error)
-        this.err = true;
-      })
     });
   }
 

@@ -29,7 +29,12 @@ export class AppComponent {
       this._restapi.getGlobal(['auth'], new HttpParams(), headers).subscribe(data => {
         let mdata: any = data;
         mdata = mdata.msg;
-        this._logger.logIn(mdata._id, mdata.role, tk);
+        this._restapi.getGlobal(['users', 'find', mdata]).subscribe(data2 => {
+          let mdata2: any = data2;
+          this._logger.logIn(mdata._id, mdata2.msg.role, tk);
+        }, err => {
+          console.log(err)
+        })
       }, err => {
         console.log(err)
       })

@@ -39,11 +39,11 @@ const appRoutes: Routes = [
       { path: 'insert-student', component: InsertStudentComponent },
       { path: 'insert-registry', component: InsertRegistryComponent },
       { path: 'edit-student/:id', component: EditStudentComponent },
-      { path: 'manage-accounts', component: ManageAccountsComponent }
     ]
   },
   {
     path: '', component: InitPageComponent, canActivateChild: [AdminGuardGuard], children: [
+      { path: 'manage-accounts', component: ManageAccountsComponent },
       { path: 'edit-user/:id', component: EditUserComponent },
     ]
   },
