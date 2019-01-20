@@ -189,9 +189,9 @@ input[type="submit"]:hover {
   background-color: darkblue;
   position: fixed;
   left: 0px;
-  top: 13%;
+  top: 14%;
   width: 75%;
-  height: 8%;
+  z-index: 1;
 }
 
 .navbar a {
@@ -205,6 +205,7 @@ input[type="submit"]:hover {
 
 .subnav {
   float: left;
+  z-index: 1;
 }
 
 .subnav .subnavbtn {
@@ -212,10 +213,11 @@ input[type="submit"]:hover {
   border: none;
   outline: none;
   color: #f4b400;
-  padding: 15.5px 16px;
+  padding: 16px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  z-index: 1;
 }
 
 .navbar a:hover,
@@ -238,13 +240,16 @@ input[type="submit"]:hover {
   float: left;
   color: darkblue;
   text-decoration: none;
+  z-index: 1;
 }
 
 .subnav-content a:hover {
   background-color: darkblue;
   color: #f4b400;
+  z-index: 1;
 }
 
 .subnav:hover .subnav-content {
   display: block;
+  z-index: 1;
 }
