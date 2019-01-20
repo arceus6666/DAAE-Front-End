@@ -17,6 +17,7 @@ export class InsertRegistryComponent implements OnInit {
     private _logger: LoggerService,
     private _router: Router
   ) {
+    console.log(this._logger.getRole())
     this.show = false;
   }
 
