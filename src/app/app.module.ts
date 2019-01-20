@@ -28,7 +28,6 @@ import { CryptarcService } from './services/cryptarc.service';
 import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AdminGuardGuard } from './guards/admin-guard.guard';
-import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +49,7 @@ import { AdminComponent } from './admin/admin.component';
     EditStudentComponent,
     ViewImageComponent,
     ManageAccountsComponent,
-    EditUserComponent,
-    AdminComponent
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
 <div *ngIf="_logger.isLoged()">
-  <h2>Insertar - Formulario</h2>
-  <div>
+  <h2 style="padding-left: 10%; padding-top: 5px; display: inline-block;"><b>Insertar - Formulario</b></h2>
+
+  <div class="divi">
     <label for="formtype">Tipo</label><br />
     <!--<select id="formtype" name="formtype">-->
     <select id="formtype" name="formtype" [(ngModel)]="this.form.category">
@@ -87,9 +88,11 @@
       <input type="text" name="semestre" #semestre="ngModel" [(ngModel)]="this.form.examen_de_suficiencia.semester"
         placeholder="Ej: II-2015">
     </div>
+    <div style="text-align: right">
+      <button class="button" name="click" (click)="register()">Guardar</button>
+    </div>
   </div>
 
-  <div><button name="click" (click)="register()">Guardar</button></div>
 
   <div *ngIf="err1">
     <div class="alert info">
@@ -104,8 +107,4 @@
     </div>
   </div>
 
-</div>
-
-<div *ngIf="!_logger.isLoged()">
-  <h1>No tienes permisos para acceder a esta página.</h1>
 </div>

@@ -19,7 +19,6 @@ import { InsertRegistryComponent } from './insert-registry/insert-registry.compo
 import { ManageAccountsComponent } from './manage-accounts/manage-accounts.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AdminGuardGuard } from './guards/admin-guard.guard';
-import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
