@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-
-<div *ngIf="_logger.isLoged()" class="mydiv">
-  <h2>Búsqueda - Formulario</h2>
+<div *ngIf="_logger.isLoged()">
+  <h2 style="padding-left: 10%; padding-top: 5px;"><b>Búsqueda - Formulario</b></h2>
+</div>
+<div *ngIf="_logger.isLoged()" class="divi">
   <div>
     <label for="formtype">Tipo</label><br />
     <select id="formtype" name="formtype" [(ngModel)]="ftype">
@@ -25,7 +26,9 @@
     <br>
   </div>
 
-  <div><button name="click" (click)="getForm()">Buscar</button></div>
+  <div style="text-align: right">
+    <button name="click" (click)="getForm()">Buscar</button>
+  </div>
 
   <div *ngIf="forms">
     <h2>Resultados de búsqueda:</h2>
@@ -51,8 +54,4 @@
       </tr>
     </table>
   </div>
-</div>
-
-<div *ngIf="!_logger.isLoged()">
-  <h1>No tienes permisos para acceder a esta página.</h1>
 </div>

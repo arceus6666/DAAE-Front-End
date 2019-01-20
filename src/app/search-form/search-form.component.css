@@ -1,14 +1,19 @@
-.mydiv {
-  background-color: white;
-  margin: 5%;
+.divi {
+  border-radius: 5px;
   border-style: groove;
   border-color: #0D47A1;
-  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto 30px auto;
+  width: 80%;
+  background-color: white;
+  position: relative;
+  top: 20px;
 }
+
 
 input[type="text"],
 select {
-  width: 15%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -40,16 +45,10 @@ input[type="date"]::-webkit-outer-spin-button {
 }
 
 input[type="date"] {
-  width: 15%;
   padding: 16px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   background: transparent;
-}
-
-div {
-  border-radius: 5px;
-  padding: 20px;
 }
 
 button {
@@ -60,14 +59,6 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-select {
-  width: 45%;
-  padding: 16px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: transparent;
 }
 
 .control-group {

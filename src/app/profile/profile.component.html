@@ -1,9 +1,8 @@
-<br>
-<div>
-  <h2>Mis Alarmas</h2>
-  <!-- Button to open the modal login form -->
-  <button class="button button1 button2" style="float: right" onclick="document.getElementById('id01').style.display='block'">Agregar nuevo</button>
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<h2 style="padding-left: 10%; padding-top: 5px; display: inline-block;"><b>Mis Alarmas</b></h2>
+<!-- Button to open the modal login form -->
+<button class="setbtn" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-plus"></i> Agregar nuevo</button>
+<div class="divi">
   <!-- The Modal -->
   <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'"
@@ -28,8 +27,9 @@
         <label for="formtime">Cuando </label>
         <input type="text" id="formtime" name="formtime" placeholder="Ej.: 17:45">
 
-        <button class="button button1 button2" type="submit">Agregar</button>
-        <button class="button button1 button2" type="button" onclick="document.getElementById('id01').style.display='none'">Cancelar</button>
+        <br>
+        <button class="button">Agregar</button>
+        <button class="button" onclick="document.getElementById('id01').style.display='none'">Cancelar</button>
       </div>
     </form>
   </div>
@@ -44,26 +44,27 @@
       }
     }
   </script>
+
   <ul>
     <li>
-      <div class="btn-group">
-        <button class="button button1 button2">Hecho</button>
-        <button class="button button1 button2">Retrasar</button>
+      <div class="divemp">
+        Ejemplo de Alarma 1
+        <div style="text-align: right">
+          <button class="button">Hecho</button>
+          <button class="button">Retrasar</button>
+        </div>
       </div>
     </li>
   </ul>
 </div>
 
-<br>
-
-<div>
-  <h2>Mis Tareas</h2>
-  <!-- Button to open the modal login form -->
-  <button class="button button1 button2" style="float: right" onclick="document.getElementById('id01').style.display='block'">Agregar nuevo</button>
-
+<h2 style="padding-left: 10%; padding-top: 5px; display: inline-block;"><b>Mis Tareas</b></h2>
+<!-- Button to open the modal login form -->
+<button class="setbtn" onclick="document.getElementById('id02').style.display='block'"><i class="fas fa-plus"></i> Agregar nuevo</button>
+<div class="divi">
   <!-- The Modal -->
-  <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
+  <div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'"
         class="close" title="Close Modal">&times;</span>
 
     <!-- Modal Content -->
@@ -84,15 +85,15 @@
         <br>
         <label for="formtime">Cuando </label>
         <input type="text" id="formtime" name="formtime" placeholder="Ej.: 17:45">
-
-        <button class="button button1 button2" type="submit">Agregar</button>
-        <button class="button button1 button2" type="button" onclick="document.getElementById('id01').style.display='none'">Cancelar</button>
+        <br>
+        <button class="button">Agregar</button>
+        <button class="button" onclick="document.getElementById('id02').style.display='none'">Cancelar</button>
       </div>
     </form>
   </div>
   <script>
     // Get the modal
-    var modal = document.getElementById('id01');
+    var modal = document.getElementById('id02');
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
@@ -102,31 +103,22 @@
     }
   </script>
 
-  <br>
   <ul>
     <li>
       <div class="divtarea">
-        <p>Ejemplo de Tarea 1</p>
-        <button class="button button1 button2" style="float: right">Hecho</button>
-        <button class="button button1 button2" style="float: right">Alarma</button>
-        <button class="button button1 button2" style="float: right">Reasignar</button>
-      </div>
-    </li>
-    <li>
-      <div class="divtarea">
-        <p>Ejemplo de Tarea 2</p>
-        <button class="button button1 button2" style="float: right">Hecho</button>
-        <button class="button button1 button2" style="float: right">Alarma</button>
-        <button class="button button1 button2" style="float: right">Reasignar</button>
+        Ejemplo de Tarea 1
+        <div style="text-align: right">
+          <button class="button">Hecho</button>
+          <button class="button">Alarma</button>
+          <button class="button">Reasignar</button>
+        </div>
       </div>
     </li>
   </ul>
 </div>
 
-<br>
-
-<div>
-  <h2>Comentarios</h2>
+<h2 style="padding-left: 10%; padding-top: 5px; display: inline-block;"><b>Comentarios</b></h2>
+<div class="divi">
   <ul>
     <li>Ejemplo de comentario</li>
   </ul>
