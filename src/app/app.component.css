@@ -61,9 +61,13 @@ body {
   height: 100%;
   overflow-y: auto;
   grid-area: 2 / 2 / 3 / 2;
+  border-left-color: #0D47A1;
+  border-left-width: 3px;
 }
 .rightup{
   grid-area: 1 / 2 / 1 / 2;
+  border-left-color: #0D47A1;
+  border-left-width: 3px;
 }
 
 .active {
