@@ -14,7 +14,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
 import { ViewFormComponent } from './view-form/view-form.component';
-import { AdminConfigComponent } from './admin-config/admin-config.component';
 import { InsertFormComponent } from './insert-form/insert-form.component';
 import { InsertStudentComponent } from './insert-student/insert-student.component';
 import { RegistryComponent } from './registry/registry.component';
@@ -39,7 +38,6 @@ import { AdminGuardGuard } from './guards/admin-guard.guard';
     SearchFormComponent,
     SearchStudentComponent,
     ViewFormComponent,
-    AdminConfigComponent,
     InsertFormComponent,
     InsertStudentComponent,
     RegistryComponent,

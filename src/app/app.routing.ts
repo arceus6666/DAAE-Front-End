@@ -35,7 +35,6 @@ const appRoutes: Routes = [
       { path: 'view-form/:id', component: ViewFormComponent },
       { path: 'view-image/:id', component: ViewImageComponent },
       { path: 'insert-form', component: InsertFormComponent },
-      { path: 'admin-config', component: AdminConfigComponent },
       { path: 'insert-student', component: InsertStudentComponent },
       { path: 'insert-registry', component: InsertRegistryComponent },
       { path: 'edit-student/:id', component: EditStudentComponent },
